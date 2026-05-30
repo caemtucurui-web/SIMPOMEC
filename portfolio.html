@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio de Patrocínio — CAEM 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN SYSTEM — CAEM 2026
+   Background: #0A0A0F  Primary: #8B1028
+   Crimson bright: #C41E3A  Gold: #D4A843
+   Silver: #9BA4B5  Bronze: #B87333
+   Headline: Bebas Neue  Body: Montserrat
+═══════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0A0A0F;
+  --bg2:      #111118;
+  --bg3:      #16161F;
+  --crimson:  #8B1028;
+  --red:      #C41E3A;
+  --gold:     #D4A843;
+  --silver:   #9BA4B5;
+  --bronze:   #B87333;
+  --white:    #FFFFFF;
+  --text:     #E8E8F0;
+  --muted:    #7A7A8C;
+  --line:     rgba(139,16,40,0.3);
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── PAGE SECTIONS ── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 4mm;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TYPOGRAPHY ── */
+.bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; }
+
+h1 { font-family: 'Bebas Neue', sans-serif; font-size: 72px; line-height: 1; }
+h2 { font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1.1; }
+h3 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1.2; }
+h4 { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; }
+
+p { font-size: 13px; line-height: 1.75; color: var(--text); }
+.small { font-size: 11px; }
+
+/* ── UTILITIES ── */
+.crimson { color: var(--red); }
+.gold-text { color: var(--gold); }
+.silver-text { color: var(--silver); }
+.bronze-text { color: var(--bronze); }
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.upper { text-transform: uppercase; }
+
+/* ── DECORATIVE ELEMENTS ── */
+.gear-bg {
+  position: absolute;
+  opacity: 0.04;
+  font-size: 400px;
+  right: -80px;
+  top: -60px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.line-accent {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--red), transparent);
+  margin: 12px 0;
+}
+
+.line-accent.gold { background: linear-gradient(90deg, var(--gold), transparent); }
+.line-accent.silver { background: linear-gradient(90deg, var(--silver), transparent); }
+.line-accent.bronze { background: linear-gradient(90deg, var(--bronze), transparent); }
+.line-accent.center-line { margin: 12px auto; background: linear-gradient(90deg, transparent, var(--red), transparent); width: 120px; }
+
+.corner-tl {
+  position: absolute; top: 0; left: 0;
+  width: 80px; height: 80px;
+  border-top: 2px solid var(--red);
+  border-left: 2px solid var(--red);
+  opacity: 0.4;
+}
+.corner-br {
+  position: absolute; bottom: 0; right: 0;
+  width: 80px; height: 80px;
+  border-bottom: 2px solid var(--red);
+  border-right: 2px solid var(--red);
+  opacity: 0.4;
+}
+
+/* ── HEADER BAR ── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+}
+.page-header img { height: 32px; object-fit: contain; }
+.page-header .tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ── FOOTER BAR ── */
+.page-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  border-top: 1px solid var(--line);
+  background: var(--bg2);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ──────────────────────────────────────
+   PAGE 1 — COVER
+────────────────────────────────────── */
+.cover {
+  background: var(--bg);
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  position: relative;
+}
+
+.cover::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(139,16,40,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(139,16,40,0.12) 0%, transparent 60%);
+}
+
+.cover-logo {
+  width: 280px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 40px rgba(196,30,58,0.4));
+}
+
+.cover-title {
+  position: relative; z-index: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cover-tagline {
+  position: relative; z-index: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.cover-tagline span { color: var(--red); }
+
+.cover-sub {
+  position: relative; z-index: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.cover-divider {
+  position: relative; z-index: 1;
+  width: 160px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  margin: 20px auto;
+}
+
+.cover-event-box {
+  position: relative; z-index: 1;
+  border: 1px solid rgba(139,16,40,0.5);
+  background: rgba(139,16,40,0.1);
+  backdrop-filter: blur(8px);
+  padding: 20px 40px;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.cover-event-box .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+
+.cover-event-box .event-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.cover-event-box .event-date {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+}
+
+.cover-values {
+  position: relative; z-index: 1;
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+}
+.cover-value {
+  text-align: center;
+}
+.cover-value .icon { font-size: 20px; margin-bottom: 4px; }
+.cover-value .label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ──────────────────────────────────────
+   SECTION HEADER
+────────────────────────────────────── */
+.section-header {
+  padding: 32px 28px 0;
+}
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+.section-title { color: var(--white); margin-bottom: 6px; }
+.section-body { padding: 20px 28px; flex: 1; }
+
+/* ──────────────────────────────────────
+   PAGE 2 — QUEM SOMOS
+────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: 2px;
+  position: relative;
+}
+.info-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--red);
+}
+
+.info-card h3 { color: var(--white); font-size: 22px; margin-bottom: 8px; }
+.info-card p { font-size: 12px; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.stat-box {
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  padding: 16px 12px;
+  text-align: center;
+  border-radius: 2px;
+}
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--red);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.mission-box {
+  background: linear-gradient(135deg, rgba(139,16,40,0.15), rgba(139,16,40,0.05));
+  border: 1px solid rgba(139,16,40,0.4);
+  padding: 20px 24px;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+.mission-box blockquote {
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text);
+  border-left: 3px solid var(--red);
+  padding-left: 16px;
+}
+
+/* ──────────────────────────────────────
+   PAGE 3 — O EVENTO
+────────────────────────────────────── */
+.event-hero {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  padding: 28px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.event-hero::after {
+  content: 'SIMPOMEC';
+  position: absolute;
+  right: -20px; top: -10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 100px;
+  color: rgba(139,16,40,0.08);
+  pointer-events: none;
+}
+.event-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  border-radius: 1px;
+}
+.badge.filled { background: var(--red); color: var(--white); }
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.event-item {
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: 2px;
+  text-align: center;
+}
+.event-item .icon { font-size: 24px; margin-bottom: 8px; }
+.event-item h4 { font-size: 12px; color: var(--white); margin-bottom: 4px; }
+.event-item p { font-size: 10px; color: var(--muted); }
+
+/* ──────────────────────────────────────
+   PAGE 4 — GALERIA
+────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 175px 115px;
+  gap: 5px;
+  margin: 0 28px;
+}
+.gallery-grid .g-hero {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+.gallery-grid .g-tall {
+  grid-column: span 1;
+  grid-row: 1 / 3;
+}
+.gallery-grid .g-sm {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.gallery-grid div img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.85) contrast(1.05);
+  display: block;
+}
+.gallery-label {
+  padding: 10px 28px;
+  font-size: 10px;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ──────────────────────────────────────
+   PAGE 5 — POR QUE PATROCINAR
+────────────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.why-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  padding: 18px;
+  border-radius: 2px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.why-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139,16,40,0.15);
+  border: 1px solid rgba(139,16,40,0.3);
+  border-radius: 2px;
+}
+.why-card h4 { font-size: 12px; color: var(--white); margin-bottom: 4px; }
+.why-card p { font-size: 11px; }
+
+.reach-banner {
+  background: linear-gradient(135deg, var(--crimson), #5a0015);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 16px;
+  border-radius: 2px;
+}
+.reach-item { text-align: center; }
+.reach-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: var(--white);
+  line-height: 1;
+}
+.reach-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); }
+.reach-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.2); }
+
+/* ──────────────────────────────────────
+   PAGE 6 — COTAS
+────────────────────────────────────── */
+.cotas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 28px;
+  flex: 1;
+}
+
+.cota-card {
+  background: var(--bg2);
+  border: 1px solid;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.cota-card.ouro { border-color: var(--gold); }
+.cota-card.prata { border-color: var(--silver); }
+.cota-card.bronze-card { border-color: var(--bronze); }
+
+.cota-header {
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+}
+.cota-card.ouro .cota-header { background: linear-gradient(135deg, rgba(212,168,67,0.2), rgba(212,168,67,0.05)); }
+.cota-card.prata .cota-header { background: linear-gradient(135deg, rgba(155,164,181,0.2), rgba(155,164,181,0.05)); }
+.cota-card.bronze-card .cota-header { background: linear-gradient(135deg, rgba(184,115,51,0.2), rgba(184,115,51,0.05)); }
+
+.cota-icon { font-size: 32px; margin-bottom: 8px; }
+.cota-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  line-height: 1;
+}
+.cota-card.ouro .cota-name { color: var(--gold); }
+.cota-card.prata .cota-name { color: var(--silver); }
+.cota-card.bronze-card .cota-name { color: var(--bronze); }
+
+.cota-desc { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+.cota-body { padding: 14px 16px; flex: 1; }
+
+.cota-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 10px;
+  line-height: 1.4;
+}
+.cota-item:last-child { border-bottom: none; }
+.cota-check {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.cota-card.ouro .cota-check { background: rgba(212,168,67,0.2); color: var(--gold); border: 1px solid var(--gold); }
+.cota-card.prata .cota-check { background: rgba(155,164,181,0.2); color: var(--silver); border: 1px solid var(--silver); }
+.cota-card.bronze-card .cota-check { background: rgba(184,115,51,0.2); color: var(--bronze); border: 1px solid var(--bronze); }
+
+.cota-highlight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.cota-card.ouro .cota-highlight { color: var(--gold); }
+.cota-card.prata .cota-highlight { color: var(--silver); }
+.cota-card.bronze-card .cota-highlight { color: var(--bronze); }
+
+/* ──────────────────────────────────────
+   PAGE 7 — TABELA COMPARATIVA
+────────────────────────────────────── */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.compare-table th {
+  padding: 10px 12px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--line);
+}
+.compare-table th:first-child { text-align: left; font-size: 12px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.compare-table th.ouro { color: var(--gold); }
+.compare-table th.prata { color: var(--silver); }
+.compare-table th.bronze { color: var(--bronze); }
+
+.compare-table td {
+  padding: 9px 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+}
+.compare-table td:first-child { text-align: left; color: var(--text); font-size: 11px; }
+.compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.check-yes { color: #4CAF50; font-size: 14px; }
+.check-no { color: var(--muted); font-size: 14px; }
+.check-partial { color: var(--gold); font-size: 11px; font-weight: 700; }
+
+/* ──────────────────────────────────────
+   PAGE 8 — CONTATO
+────────────────────────────────────── */
+.contact-hero {
+  background: linear-gradient(135deg, rgba(139,16,40,0.2), rgba(139,16,40,0.05));
+  border: 1px solid rgba(139,16,40,0.3);
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(196,30,58,0.15), transparent);
+}
+.contact-hero h2 { position: relative; z-index:1; font-size: 40px; color: var(--white); }
+.contact-hero p { position: relative; z-index:1; font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.contact-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  padding: 20px;
+  text-align: center;
+  border-radius: 2px;
+}
+.contact-card .icon { font-size: 28px; margin-bottom: 10px; }
+.contact-card h4 { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.contact-card p { font-size: 12px; font-weight: 600; color: var(--white); }
+
+.closing-banner {
+  background: var(--crimson);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.closing-banner .left h3 { font-size: 28px; color: var(--white); }
+.closing-banner .left p { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+.closing-banner img { height: 56px; opacity: 1; }
+
+/* ── PRINT ── */
+@media print {
+  body { background: #fff; }
+  .page { margin: 0; page-break-after: always; width: 210mm; min-height: 297mm; }
+  .page:last-child { page-break-after: auto; }
+}
+
+@page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     PAGE 1 — CAPA
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="corner-tl"></div>
+    <div class="corner-br"></div>
+
+    <img class="cover-logo"
+         src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png"
+         alt="Logo CAEM">
+
+    <div class="cover-title">Centro Acadêmico de Engenharia Mecânica</div>
+    <div class="cover-tagline">Forjamos Ideias.<br><span>Projetamos o Futuro.</span></div>
+    <div class="cover-sub">UFPA · Faculdade de Engenharia Mecânica · Tucuruí, Pará</div>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-event-box">
+      <div class="label">Portfólio de Patrocínio · SIMPOMEC 2026</div>
+      <div class="event-name">SIMPOMEC</div>
+      <div class="event-date">⚙ Outubro de 2026 · Tucuruí PA</div>
+    </div>
+
+    <div class="cover-values">
+      <div class="cover-value"><div class="icon">⚡</div><div class="label">Força</div></div>
+      <div class="cover-value"><div class="icon">⚙</div><div class="label">Precisão</div></div>
+      <div class="cover-value"><div class="icon">🎯</div><div class="label">Liderança</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 2 — QUEM SOMOS
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-eyebrow">01 · Quem Somos</div>
+    <h2 class="section-title">O CAEM e a FEM</h2>
+    <div class="line-accent"></div>
+  </div>
+
+  <div class="section-body">
+    <div class="about-grid">
+      <div class="info-card">
+        <h3>CAEM</h3>
+        <div class="line-accent" style="margin-bottom:12px;"></div>
+        <p>O <strong>Centro Acadêmico de Engenharia Mecânica (CAEM)</strong> foi fundado em <strong>2014</strong> no Campus Universitário de Tucuruí (CAMTUC) da UFPA. Desde sua fundação, o CAEM atua na representação estudantil, organização de eventos técnicos e promoção do desenvolvimento acadêmico, profissional e social dos engenheiros mecânicos da região.</p>
+        <br>
+        <p>Realizamos <strong>workshops, palestras, simpósios, minicursos e semanas acadêmicas</strong> que conectam alunos a professores e profissionais do mercado, contribuindo para a formação de engenheiros preparados para os grandes desafios da indústria no Pará e no Brasil.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>FEM · Tucuruí</h3>
+        <div class="line-accent" style="margin-bottom:12px;"></div>
+        <p>A <strong>Faculdade de Engenharia Mecânica (FEM)</strong> da UFPA em Tucuruí foi implantada em <strong>2007</strong>, nascendo da vocação energética e industrial da região do sudeste paraense. Sua criação foi motivada pela alta demanda de profissionais para projetos da <strong>AXIA Energia, HYDRO, VALE</strong> e outras grandes empresas da região.</p>
+        <br>
+        <p>Estrategicamente localizada para atender os polos industriais da região de <strong>Tucuruí e Carajás</strong>, a FEM forma engenheiros que atuam nos maiores projetos de infraestrutura do país.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-number">12+</div>
+        <div class="stat-label">Anos de<br>história</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Cursos<br>no evento</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Alunos<br>ativos</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Participantes<br>em eventos</div>
+      </div>
+    </div>
+
+    <div class="mission-box">
+      <h4 style="margin-bottom:10px; color:var(--red);">Nossa Missão</h4>
+      <blockquote>
+        "A missão do Centro Acadêmico de Engenharia Mecânica é representar os direitos dos estudantes, defendendo e zelando pela qualidade de ensino do curso junto à universidade. Promovendo eventos para a comunidade acadêmica, como workshops, palestras e simpósios. Prezando sempre pelo desenvolvimento acadêmico, profissional e social dos estudantes, além de incentivar a integração entre alunos, professores e profissionais da área."
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 3 — O EVENTO
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-eyebrow">02 · O Evento</div>
+    <h2 class="section-title">SIMPOMEC</h2>
+    <div class="line-accent"></div>
+  </div>
+
+  <div class="section-body">
+    <div class="event-hero">
+      <div class="event-badges">
+        <span class="badge filled">Outubro 2026</span>
+        <span class="badge">Tucuruí PA</span>
+        <span class="badge">UFPA</span>
+        <span class="badge">1ª Edição</span>
+        <span class="badge">1 Semana</span>
+        <span class="badge">5 Cursos</span>
+      </div>
+      <h3 style="color:var(--white); margin-bottom:10px;">Uma Semana Completa de Engenharia em Tucuruí</h3>
+      <p style="font-size:12px; max-width:520px;">O SIMPOMEC é uma semana inteira de imersão técnica e acadêmica reunindo estudantes de 5 cursos de engenharia da UFPA Tucuruí junto com profissionais e empresas do mercado. Um evento que conecta a academia à indústria em uma das regiões com maior potencial energético e industrial do Brasil, abrindo portas para estágios, vagas e parcerias estratégicas.</p>
+      <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;">
+        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">⚙ Eng. Mecânica</span>
+        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">⚡ Eng. Elétrica</span>
+        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">🏗 Eng. Civil</span>
+        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">🌿 Eng. Sanitária e Ambiental</span>
+        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">💻 Computação e Física</span>
+      </div>
+    </div>
+
+    <div class="event-grid">
+      <div class="event-item">
+        <div class="icon">🎤</div>
+        <h4>Palestras Técnicas</h4>
+        <p>Profissionais de VALE, HYDRO, Eletronorte e FluidPar compartilham experiências reais do mercado</p>
+      </div>
+      <div class="event-item">
+        <div class="icon">🛠</div>
+        <h4>Workshops Práticos</h4>
+        <p>Atividades hands-on em temas como CAD, FEM, soldagem, elétrica, materiais e processos</p>
+      </div>
+      <div class="event-item">
+        <div class="icon">📄</div>
+        <h4>Apresentação de Trabalhos Acadêmicos</h4>
+        <p>Alunos apresentam pesquisas, TCCs e projetos de iniciação científica para banca e plateia</p>
+      </div>
+      <div class="event-item">
+        <div class="icon">🤝</div>
+        <h4>Networking</h4>
+        <p>Conexão entre alunos dos 5 cursos, professores e recrutadores das maiores empresas da região</p>
+      </div>
+      <div class="event-item">
+        <div class="icon">📚</div>
+        <h4>Minicursos</h4>
+        <p>Minicursos práticos com certificado oficial e horas de extensão validadas pela UFPA para todos os participantes</p>
+      </div>
+      <div class="event-item">
+        <div class="icon">🏛</div>
+        <h4>Banca Examinadora</h4>
+        <p>Alunos submetem artigos para avaliação e feedback de uma banca examinadora especializada, com orientação para publicação</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 4 — GALERIA
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header" style="padding-bottom:16px;">
+    <div class="section-eyebrow">03 · Registros</div>
+    <h2 class="section-title">EVENTOS PASSADOS</h2>
+    <div class="line-accent"></div>
+    <p style="font-size:12px; color:var(--muted); margin-top:6px;">Momentos da II Semana de Engenharia Mecânica — SIMPOMEC — Edição Anterior</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="g-hero"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.14 (3).jpeg" alt="Auditório IISEMEC com plateia"></div>
+    <div class="g-tall"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.14.jpeg" alt="Palestra técnica FluidPar"></div>
+    <div class="g-tall"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.31.jpeg" alt="Mesa de abertura IISEMEC"></div>
+    <div class="g-sm"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.19 (1).jpeg" alt="Equipe CAEM no palco"></div>
+    <div class="g-sm"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.19.jpeg" alt="Time CAEM IISEMEC"></div>
+    <div class="g-sm"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.13.jpeg" alt="CAEM e representante VALE"></div>
+    <div class="g-sm"><img src="../fotos do evento/WhatsApp Image 2026-05-28 at 21.52.12.jpeg" alt="Time CAEM"></div>
+  </div>
+  <div class="gallery-label">Registros do IISEMEC 2025 — Núcleo de Desenvolvimento Amazônico em Engenharia · UFPA Tucuruí · com participação de representantes da VALE S.A. e FluidPar</div>
+
+  <div style="padding: 12px 28px;">
+    <div class="reach-banner">
+      <div class="reach-item">
+        <div class="reach-number">200+</div>
+        <div class="reach-label">Participantes</div>
+      </div>
+      <div class="reach-divider"></div>
+      <div class="reach-item">
+        <div class="reach-number">10+</div>
+        <div class="reach-label">Palestrantes</div>
+      </div>
+      <div class="reach-divider"></div>
+      <div class="reach-item">
+        <div class="reach-number">1</div>
+        <div class="reach-label">Semana de evento</div>
+      </div>
+      <div class="reach-divider"></div>
+      <div class="reach-item">
+        <div class="reach-number">5</div>
+        <div class="reach-label">Cursos reunidos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 5 — POR QUE PATROCINAR
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-eyebrow">04 · Oportunidade</div>
+    <h2 class="section-title">POR QUE PATROCINAR?</h2>
+    <div class="line-accent"></div>
+  </div>
+
+  <div class="section-body">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <div>
+          <h4>Público Multidisciplinar e Qualificado</h4>
+          <p>Alcance estudantes de <strong>5 cursos</strong>: Engenharia Mecânica, Elétrica, Civil, Sanitária e Ambiental, Computação e Física — os futuros profissionais das maiores empresas do Pará e do Brasil.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📣</div>
+        <div>
+          <h4>Visibilidade Multiplataforma</h4>
+          <p>Sua marca presente no evento presencial, nos materiais impressos, no Instagram e LinkedIn do CAEM — antes, durante e depois do evento.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <div>
+          <h4>Conexão com o Mercado Regional</h4>
+          <p>Aproxime sua empresa do ecossistema de engenharia do sudeste paraense — uma das regiões com maior crescimento industrial do país, impulsionada por Carajás e Tucuruí.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💼</div>
+        <div>
+          <h4>Recrutamento e Estágios</h4>
+          <p>Acesso direto aos melhores talentos em formação. Apresente sua empresa, divulgue vagas de estágio e posicione sua marca como empregadora de referência para os engenheiros da UFPA Tucuruí.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏛</div>
+        <div>
+          <h4>Responsabilidade Social</h4>
+          <p>Associe sua marca ao desenvolvimento educacional e científico da região. Apoiar o CAEM é investir na formação de engenheiros que vão transformar o Pará.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📸</div>
+        <div>
+          <h4>Presença no Certificado</h4>
+          <p>Dependendo da cota, sua marca estará no certificado de centenas de participantes — um documento que o engenheiro carrega em seu currículo por toda a carreira.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px; background:var(--bg2); border:1px solid var(--line); padding:16px 20px; border-radius:2px;">
+      <h4 style="color:var(--red); margin-bottom:8px; font-size:11px;">⚡ Alcance nas Redes Sociais</h4>
+      <p style="font-size:11px;">O CAEM possui presença ativa no <strong>Instagram</strong> e <strong>LinkedIn</strong>, com publicações regulares direcionadas ao público de engenharia mecânica da UFPA e da região. Durante o período do evento, a frequência de posts aumenta significativamente, ampliando o alcance da sua marca para além do campus.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 6 — COTAS
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-eyebrow">05 · Investimento</div>
+    <h2 class="section-title">COTAS DE PATROCÍNIO</h2>
+    <div class="line-accent"></div>
+    <p style="font-size:11px; color:var(--muted); margin-top:4px;">Escolha a cota que melhor representa o posicionamento da sua empresa no evento</p>
+  </div>
+
+  <div style="height:16px;"></div>
+
+  <div class="cotas-grid">
+
+    <!-- BRONZE -->
+    <div class="cota-card bronze-card">
+      <div class="cota-header">
+        <div class="cota-icon">🥉</div>
+        <div class="cota-name">BRONZE</div>
+        <div class="cota-desc">Visibilidade essencial</div>
+      </div>
+      <div class="cota-body">
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Logo nos materiais digitais (Instagram e LinkedIn)</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>1 menção por rede social antes do evento</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Logo no banner do evento (rodapé)</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>2 convites para o evento</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Certificado de parceiro Bronze</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Menção nos agradecimentos do evento</span>
+        </div>
+        <div class="cota-highlight">
+          <span>🥉</span> Presença garantida
+        </div>
+      </div>
+    </div>
+
+    <!-- PRATA -->
+    <div class="cota-card prata">
+      <div class="cota-header">
+        <div class="cota-icon">🥈</div>
+        <div class="cota-name">PRATA</div>
+        <div class="cota-desc">Visibilidade ampliada</div>
+      </div>
+      <div class="cota-body">
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Tudo da cota Bronze</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Logo em destaque no banner principal</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>3 posts dedicados (Instagram + LinkedIn)</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>5 convites VIP para o evento</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Menção no discurso de abertura</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Espaço de exposição no evento</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Logo nos materiais impressos</span>
+        </div>
+        <div class="cota-highlight">
+          <span>🥈</span> Destaque real
+        </div>
+      </div>
+    </div>
+
+    <!-- OURO -->
+    <div class="cota-card ouro">
+      <div class="cota-header">
+        <div class="cota-icon">🥇</div>
+        <div class="cota-name">OURO</div>
+        <div class="cota-desc">Máxima visibilidade</div>
+      </div>
+      <div class="cota-body">
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Tudo da cota Prata</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Logo principal em TODOS os materiais</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Naming rights de uma palestra exclusiva</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>10 convites VIP + mesa reservada</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Pitch da empresa para a plateia (5 min)</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Logo no certificado de todos os participantes</span>
+        </div>
+        <div class="cota-item">
+          <span class="cota-check">✓</span>
+          <span>Post exclusivo dedicado à empresa</span>
+        </div>
+        <div class="cota-highlight">
+          <span>🥇</span> Parceiro Oficial
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding:12px 28px 0;">
+    <p style="font-size:10px; color:var(--muted); text-align:center;">
+      * Valores e condições de pagamento mediante proposta formal. Entre em contato para negociação personalizada.
+    </p>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 7 — TABELA COMPARATIVA
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-eyebrow">06 · Comparativo</div>
+    <h2 class="section-title">TABELA DE BENEFÍCIOS</h2>
+    <div class="line-accent"></div>
+  </div>
+
+  <div class="section-body">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Benefício</th>
+          <th class="bronze">🥉 Bronze</th>
+          <th class="prata">🥈 Prata</th>
+          <th class="ouro">🥇 Ouro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4" style="padding:8px 12px; font-size:10px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; background:var(--bg3);">REDES SOCIAIS</td></tr>
+        <tr>
+          <td>Menção nas redes sociais (Instagram + LinkedIn)</td>
+          <td><span class="check-partial">1 post</span></td>
+          <td><span class="check-partial">3 posts</span></td>
+          <td><span class="check-partial">Ilimitado</span></td>
+        </tr>
+        <tr>
+          <td>Post exclusivo dedicado à empresa</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Stories durante o evento</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+
+        <tr><td colspan="4" style="padding:8px 12px; font-size:10px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; background:var(--bg3);">PRESENÇA NO EVENTO</td></tr>
+        <tr>
+          <td>Logo no banner do evento</td>
+          <td><span class="check-partial">Rodapé</span></td>
+          <td><span class="check-partial">Destaque</span></td>
+          <td><span class="check-partial">Principal</span></td>
+        </tr>
+        <tr>
+          <td>Menção no discurso de abertura</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Pitch da empresa para a plateia</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-partial">5 min</span></td>
+        </tr>
+        <tr>
+          <td>Naming rights de palestra/workshop</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Espaço de exposição no evento</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+
+        <tr><td colspan="4" style="padding:8px 12px; font-size:10px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; background:var(--bg3);">CONVITES E ACESSO</td></tr>
+        <tr>
+          <td>Convites para o evento</td>
+          <td><span class="check-partial">2 convites</span></td>
+          <td><span class="check-partial">5 VIP</span></td>
+          <td><span class="check-partial">10 VIP + mesa</span></td>
+        </tr>
+
+        <tr><td colspan="4" style="padding:8px 12px; font-size:10px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; background:var(--bg3);">MATERIAIS FÍSICOS E DIGITAIS</td></tr>
+        <tr>
+          <td>Logo nos materiais digitais</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Logo nos materiais impressos</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Logo no certificado dos participantes</td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Certificado de parceiro oficial</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 8 — CONTATO
+═══════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    <span class="tag">Portfólio de Patrocínio 2026</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-eyebrow">07 · Próximos Passos</div>
+    <h2 class="section-title">VAMOS CONSTRUIR JUNTOS</h2>
+    <div class="line-accent"></div>
+  </div>
+
+  <div class="section-body">
+    <div class="contact-hero">
+      <h2>Torne-se Parceiro do SIMPOMEC 2026</h2>
+      <p>Sua empresa em destaque durante uma semana inteira de engenharia em Tucuruí.<br>Entre em contato e garanta sua cota antes do prazo.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📧</div>
+        <h4>E-mail</h4>
+        <p>caemtucurui@gmail.com</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📷</div>
+        <h4>Instagram</h4>
+        <p>@caemtuc</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h4>Diretor de Evento</h4>
+        <p>+55 94 9259-7049</p>
+      </div>
+    </div>
+
+    <div style="margin-top:16px; background:var(--bg2); border:1px solid var(--line); padding:20px 24px; border-radius:2px;">
+      <h4 style="color:var(--white); margin-bottom:12px; font-size:12px;">⚙ Como fechar o patrocínio</h4>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; text-align:center;">
+        <div style="padding:12px 8px;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--red);">01</div>
+          <div style="font-size:10px; font-weight:700; margin:4px 0; color:var(--white);">Entre em contato</div>
+          <div style="font-size:10px; color:var(--muted);">Mande uma mensagem informando a cota de interesse</div>
+        </div>
+        <div style="padding:12px 8px;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--red);">02</div>
+          <div style="font-size:10px; font-weight:700; margin:4px 0; color:var(--white);">Proposta formal</div>
+          <div style="font-size:10px; color:var(--muted);">Enviamos a proposta com valores e prazos</div>
+        </div>
+        <div style="padding:12px 8px;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--red);">03</div>
+          <div style="font-size:10px; font-weight:700; margin:4px 0; color:var(--white);">Assinatura</div>
+          <div style="font-size:10px; color:var(--muted);">Formalização do contrato e envio dos materiais da empresa</div>
+        </div>
+        <div style="padding:12px 8px;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--red);">04</div>
+          <div style="font-size:10px; font-weight:700; margin:4px 0; color:var(--white);">Visibilidade</div>
+          <div style="font-size:10px; color:var(--muted);">Sua marca em destaque antes, durante e após o evento</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing-banner">
+      <div class="left">
+        <h3>FORJAMOS IDEIAS. PROJETAMOS O FUTURO.</h3>
+        <p>CAEM · Centro Acadêmico de Engenharia Mecânica · UFPA Tucuruí · 2026</p>
+      </div>
+      <img src="../nova logo/ChatGPT Image 19 de mai. de 2026, 13_02_46.png" alt="CAEM">
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>CAEM · Centro Acadêmico de Engenharia Mecânica</span>
+    <span>UFPA Tucuruí · 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
