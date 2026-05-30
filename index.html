@@ -323,6 +323,16 @@ body {
 .date-item .dt { color: #777; }
 .date-item .dd { color: var(--white); font-weight: 600; }
 .artigos-btns { display: flex; flex-direction: column; gap: 12px; }
+.file-drop {
+  border: 2px dashed rgba(196,30,58,0.35); border-radius: var(--r);
+  background: var(--bg2); padding: 24px 16px; text-align: center;
+  cursor: pointer; transition: all 0.2s;
+}
+.file-drop:hover, .file-drop.drag-over { border-color: var(--red); background: rgba(196,30,58,0.06); }
+.file-drop.has-file { border-color: #4CAF50; background: rgba(76,175,80,0.06); }
+.file-drop-icon { font-size: 28px; margin-bottom: 6px; }
+.file-drop-text { font-size: 12px; color: #555; line-height: 1.6; }
+.file-drop-text small { font-size: 10px; color: #333; }
 
 /* ════════════════════════════════════════
    PATROCINADORES
@@ -944,9 +954,10 @@ footer {
       </div>
 
       <div class="artigos-box">
-        <h3>INFORMAÇÕES DE SUBMISSÃO</h3>
-        <p>Artigos de qualquer área de engenharia são bem-vindos. Trabalhos de graduação, iniciação científica, TCC e projetos de extensão também são aceitos.</p>
-        <div class="dates">
+        <h3>SUBMETER ARTIGO</h3>
+        <div class="form-subtitle">Preencha os dados e anexe o PDF</div>
+
+        <div class="dates" style="margin-bottom:20px;">
           <h4>Datas Importantes</h4>
           <div class="date-item"><span class="dt">Abertura de submissões</span><span class="dd">A confirmar</span></div>
           <div class="date-item"><span class="dt">Prazo final de envio</span><span class="dd">A confirmar</span></div>
@@ -954,19 +965,89 @@ footer {
           <div class="date-item"><span class="dt">Prazo para correções</span><span class="dd">A confirmar</span></div>
           <div class="date-item"><span class="dt">Apresentações no evento</span><span class="dd">Outubro 2026</span></div>
         </div>
-        <div class="artigos-btns">
-          <!-- SUBSTITUIR: coloque o link do Google Drive do template aqui -->
-          <a href="https://drive.google.com/SUBSTITUIR_LINK_TEMPLATE" target="_blank" class="btn btn-outline" style="justify-content:center;">
-            📥 Baixar Template do Artigo
-          </a>
-          <!-- SUBSTITUIR: coloque o link do Google Forms de submissão aqui -->
-          <a href="https://forms.gle/SUBSTITUIR_LINK_SUBMISSAO" target="_blank" class="btn btn-primary" style="justify-content:center;">
-            📤 Submeter Artigo
+
+        <form id="artigo-form"
+              action="https://formsubmit.co/caemtucurui@gmail.com"
+              method="POST"
+              enctype="multipart/form-data">
+
+          <!-- Configurações Formsubmit -->
+          <input type="hidden" name="_subject" value="📄 Nova Submissão de Artigo — III SIMPOMEC 2026">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://caemtucurui-web.github.io/SIMPOMEC?artigo=enviado">
+
+          <div class="form-group">
+            <label>Título do Artigo <span class="req">*</span></label>
+            <input class="form-control" type="text" name="titulo" placeholder="Título completo do trabalho" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome do Autor Principal <span class="req">*</span></label>
+              <input class="form-control" type="text" name="autor_principal" placeholder="Nome completo" required>
+            </div>
+            <div class="form-group">
+              <label>E-mail <span class="req">*</span></label>
+              <input class="form-control" type="email" name="email" placeholder="seu@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Coautores <span style="color:#444; font-weight:400;">(opcional)</span></label>
+            <input class="form-control" type="text" name="coautores" placeholder="Nome 1, Nome 2, Nome 3...">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Instituição <span class="req">*</span></label>
+              <input class="form-control" type="text" name="instituicao" placeholder="Ex: UFPA Tucuruí" required>
+            </div>
+            <div class="form-group">
+              <label>Área do Trabalho <span class="req">*</span></label>
+              <select class="form-control" name="area" required>
+                <option value="" disabled selected>Selecione...</option>
+                <option>Eng. Mecânica</option>
+                <option>Eng. Elétrica</option>
+                <option>Eng. Civil</option>
+                <option>Eng. Sanitária e Ambiental</option>
+                <option>Computação</option>
+                <option>Física</option>
+                <option>Outra</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Upload do PDF -->
+          <div class="form-group">
+            <label>Arquivo PDF do Artigo <span class="req">*</span></label>
+            <div class="file-drop" id="file-drop" onclick="document.getElementById('pdf-input').click()">
+              <div class="file-drop-icon">📄</div>
+              <div class="file-drop-text" id="file-drop-text">
+                Clique para selecionar o PDF<br>
+                <small>Máx. 5 MB · Apenas .pdf</small>
+              </div>
+            </div>
+            <input type="file" id="pdf-input" name="artigo_pdf"
+                   accept=".pdf" required
+                   style="display:none"
+                   onchange="updateFileName(this)">
+          </div>
+
+          <button type="submit" class="form-submit" id="artigo-submit-btn">
+            📤 Enviar Artigo para Avaliação
+          </button>
+          <p class="form-note">
+            Use o template oficial antes de submeter.<br>
+            Dúvidas: <a href="mailto:caemtucurui@gmail.com" style="color:var(--red); text-decoration:none;">caemtucurui@gmail.com</a>
+          </p>
+        </form>
+
+        <div class="artigos-btns" style="margin-top:20px;">
+          <a href="https://drive.google.com/SUBSTITUIR_LINK_TEMPLATE" target="_blank" class="btn btn-outline" style="justify-content:center; font-size:12px;">
+            📥 Baixar Template Oficial (.docx)
           </a>
         </div>
-        <p style="font-size:11px; color:#333; margin-top:16px; text-align:center;">
-          Dúvidas? <a href="mailto:caemtucurui@gmail.com" style="color:var(--red); text-decoration:none;">caemtucurui@gmail.com</a>
-        </p>
       </div>
     </div>
   </div>
@@ -1308,6 +1389,50 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').style.boxShadow =
     window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.5)' : 'none';
 }, { passive: true });
+
+// ── Upload de PDF ──
+function updateFileName(input) {
+  const drop = document.getElementById('file-drop');
+  const text = document.getElementById('file-drop-text');
+  if (input.files && input.files[0]) {
+    const f = input.files[0];
+    const mb = (f.size / 1024 / 1024).toFixed(2);
+    if (f.size > 5 * 1024 * 1024) {
+      text.innerHTML = '⚠️ Arquivo muito grande (máx. 5 MB)';
+      drop.classList.remove('has-file');
+      input.value = '';
+      return;
+    }
+    drop.classList.add('has-file');
+    text.innerHTML = `✅ <strong>${f.name}</strong><br><small>${mb} MB</small>`;
+  }
+}
+// Drag & drop
+const fileDrop = document.getElementById('file-drop');
+if (fileDrop) {
+  fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('drag-over'); });
+  fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('drag-over'));
+  fileDrop.addEventListener('drop', e => {
+    e.preventDefault();
+    fileDrop.classList.remove('drag-over');
+    const input = document.getElementById('pdf-input');
+    input.files = e.dataTransfer.files;
+    updateFileName(input);
+  });
+}
+
+// Mensagem de sucesso pós-submissão (via URL param)
+if (new URLSearchParams(window.location.search).get('artigo') === 'enviado') {
+  const section = document.getElementById('artigos');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    const box = section.querySelector('.artigos-box');
+    if (box) box.insertAdjacentHTML('afterbegin',
+      '<div style="background:rgba(76,175,80,0.12);border:1px solid #4CAF50;border-radius:4px;padding:16px 20px;margin-bottom:20px;text-align:center;">' +
+      '<strong style="color:#4CAF50;">✅ Artigo enviado com sucesso!</strong><br>' +
+      '<span style="font-size:12px;color:#666;">Você receberá a confirmação no e-mail informado.</span></div>');
+  }
+}
 
 // ── Formulário de inscrição ──
 const form = document.getElementById('inscricao-form');
