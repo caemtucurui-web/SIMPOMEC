@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="III SIMPOMEC 2026 — Simpósio de Engenharia da UFPA Tucuruí. Palestras, minicursos, apresentação de artigos e networking. Outubro 2026.">
+<meta name="theme-color" content="#C41E3A">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn preview) -->
+<meta property="og:title" content="III SIMPOMEC 2026 — Simpósio de Engenharia · UFPA Tucuruí">
+<meta property="og:description" content="O maior evento acadêmico do Núcleo de Engenharia da UFPA Tucuruí. Minicursos, palestras, artigos e networking. Outubro 2026.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<title>III SIMPOMEC 2026 — Simpósio de Engenharia · UFPA Tucuruí</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   DESIGN SYSTEM — III SIMPOMEC 2026
+   Crimson: #C41E3A  Dark: #0A0A0F
+   Font: Bebas Neue (headlines) + Montserrat
+════════════════════════════════════════ */
+:root {
+  --red:    #C41E3A;
+  --red2:   #8B1028;
+  --bg:     #0A0A0F;
+  --bg2:    #111118;
+  --bg3:    #18181F;
+  --white:  #FFFFFF;
+  --text:   #E0E0EE;
+  --muted:  #707088;
+  --gold:   #D4A843;
+  --silver: #9BA4B5;
+  --bronze: #B87333;
+  --font-h: 'Bebas Neue', sans-serif;
+  --font-b: 'Montserrat', sans-serif;
+  --r:      4px;
+  --max:    1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--red2); border-radius: 3px; }
+
+/* ── UTILITIES ── */
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.section-alt { background: var(--bg2); }
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--red); margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-h); font-size: clamp(42px, 5vw, 64px);
+  color: var(--white); letter-spacing: 0.03em; line-height: 1;
+  margin-bottom: 8px;
+}
+.section-line {
+  width: 56px; height: 3px;
+  background: linear-gradient(90deg, var(--red), transparent);
+  margin: 12px 0 32px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-b); font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  padding: 14px 28px; border-radius: var(--r);
+  cursor: pointer; text-decoration: none; border: none;
+  transition: all 0.2s;
+}
+.btn-primary { background: var(--red); color: var(--white); }
+.btn-primary:hover { background: #E02040; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--red); border: 2px solid var(--red); }
+.btn-outline:hover { background: var(--red); color: var(--white); }
+
+/* ════════════════════════════════════════
+   NAVBAR
+════════════════════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,10,15,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(139,16,40,0.25);
+  transition: all 0.3s;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 64px; max-width: var(--max); margin: 0 auto;
+}
+.nav-logo {
+  font-family: var(--font-h); font-size: 22px; color: var(--white);
+  letter-spacing: 0.08em; text-decoration: none; display: flex;
+  align-items: center; gap: 10px;
+}
+.nav-logo .badge {
+  background: var(--red); color: var(--white);
+  font-size: 11px; padding: 2px 8px; border-radius: 2px;
+  font-family: var(--font-b); font-weight: 900;
+}
+.nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+.nav-links a {
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.1em; color: #888; text-decoration: none;
+  padding: 6px 12px; border-radius: var(--r); transition: all 0.2s;
+}
+.nav-links a:hover, .nav-links a.active-link { color: var(--white); background: rgba(255,255,255,0.06); }
+.nav-cta { background: var(--red); color: var(--white) !important; padding: 8px 16px !important; }
+.nav-cta:hover { background: #E02040 !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; transition: 0.3s; }
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding-top: 64px;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(139,16,40,0.3) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(139,16,40,0.1) 0%, transparent 60%),
+    var(--bg);
+}
+.hero::before {
+  content: '⚙';
+  position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+  font-size: 700px; color: rgba(139,16,40,0.04); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.hero-inner { text-align: center; position: relative; z-index: 1; padding: 40px 24px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,30,58,0.15); border: 1px solid rgba(196,30,58,0.4);
+  padding: 8px 20px; border-radius: 100px; margin-bottom: 24px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--red);
+}
+.hero-icon {
+  width: 160px; height: 160px; margin: 0 auto 28px;
+  filter: drop-shadow(0 0 40px rgba(196,30,58,0.5));
+}
+.hero-title {
+  font-family: var(--font-h);
+  font-size: clamp(68px, 12vw, 160px);
+  color: var(--white); letter-spacing: 0.02em;
+  line-height: 0.9; margin-bottom: 20px;
+}
+.hero-title .iii { color: var(--red); }
+.hero-subtitle {
+  font-size: clamp(14px, 2vw, 18px); color: #888;
+  font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 40px;
+}
+.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.countdown { display: flex; gap: 16px; justify-content: center; margin-bottom: 40px; }
+.countdown-box {
+  background: rgba(139,16,40,0.12); border: 1px solid rgba(139,16,40,0.3);
+  padding: 14px 20px; border-radius: var(--r); min-width: 76px; text-align: center;
+}
+.countdown-box .num {
+  font-family: var(--font-h); font-size: 42px; color: var(--white);
+  line-height: 1; display: block;
+}
+.countdown-box .unit {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #555; margin-top: 2px;
+}
+.hero-courses { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 40px; }
+.hero-courses span {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  padding: 6px 14px; border: 1px solid rgba(139,16,40,0.4);
+  border-radius: 100px; color: #888; text-transform: uppercase;
+}
+
+/* ════════════════════════════════════════
+   SOBRE
+════════════════════════════════════════ */
+.sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.sobre-text p { font-size: 15px; color: #9090A0; line-height: 1.8; margin-bottom: 16px; }
+.sobre-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card {
+  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  padding: 24px 20px; border-radius: var(--r); text-align: center;
+}
+.stat-card .num { font-family: var(--font-h); font-size: 52px; color: var(--red); line-height: 1; }
+.stat-card .lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #555; margin-top: 4px; }
+
+/* ════════════════════════════════════════
+   PROGRAMAÇÃO
+════════════════════════════════════════ */
+.prog-tabs { display: flex; gap: 8px; margin-bottom: 40px; flex-wrap: wrap; }
+.prog-tab {
+  font-family: var(--font-b); font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 10px 22px; border-radius: var(--r); cursor: pointer;
+  border: 1px solid rgba(139,16,40,0.3); background: transparent;
+  color: #666; transition: all 0.2s;
+}
+.prog-tab.active, .prog-tab:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+.prog-day { display: none; }
+.prog-day.active { display: block; }
+.prog-item {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.prog-item:last-child { border-bottom: none; }
+.prog-time { font-family: var(--font-h); font-size: 18px; color: var(--red); min-width: 80px; padding-top: 2px; }
+.prog-content h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.prog-content p { font-size: 13px; color: #666; }
+.prog-type {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 100px; margin-left: 8px;
+}
+.prog-type.palestra  { background: rgba(196,30,58,0.2); color: var(--red); }
+.prog-type.minicurso { background: rgba(212,168,67,0.2); color: var(--gold); }
+.prog-type.abertura  { background: rgba(155,164,181,0.2); color: var(--silver); }
+.prog-type.artigo    { background: rgba(184,115,51,0.2); color: var(--bronze); }
+
+/* ════════════════════════════════════════
+   PALESTRANTES
+════════════════════════════════════════ */
+.speakers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.speaker-card {
+  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  border-radius: var(--r); padding: 28px 24px; text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.speaker-card:hover { border-color: var(--red); transform: translateY(-4px); }
+.speaker-avatar {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: var(--bg2); margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; border: 2px solid rgba(139,16,40,0.4); overflow: hidden;
+}
+.speaker-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.speaker-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.speaker-role { font-size: 12px; color: #555; margin-bottom: 8px; }
+.speaker-company { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
+.speaker-status {
+  display: inline-block; margin-top: 12px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 100px;
+}
+.speaker-status.confirmed { background: rgba(76,175,80,0.2); color: #4CAF50; }
+.speaker-status.tba { background: rgba(255,255,255,0.06); color: #444; }
+
+/* ════════════════════════════════════════
+   MINICURSOS
+════════════════════════════════════════ */
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.course-card {
+  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  border-radius: var(--r); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.course-card:hover { border-color: var(--red); transform: translateY(-4px); }
+.course-header {
+  background: linear-gradient(135deg, rgba(139,16,40,0.25), rgba(139,16,40,0.08));
+  padding: 20px 24px; border-bottom: 1px solid rgba(139,16,40,0.15);
+}
+.course-icon { font-size: 28px; margin-bottom: 8px; }
+.course-title { font-size: 16px; font-weight: 800; color: var(--white); }
+.course-body { padding: 20px 24px; flex: 1; display: flex; flex-direction: column; }
+.course-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.course-meta span { font-size: 11px; font-weight: 700; color: #555; display: flex; align-items: center; gap: 4px; }
+.course-desc { font-size: 13px; color: #777; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+.course-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.04);
+  margin: 0 -24px -20px;
+}
+.vagas { font-size: 12px; font-weight: 700; color: #555; }
+.vagas span { color: var(--red); }
+.vagas span.esgotado { color: #444; text-decoration: line-through; }
+
+/* ════════════════════════════════════════
+   ARTIGOS
+════════════════════════════════════════ */
+.artigos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.artigos-steps { list-style: none; counter-reset: step; }
+.artigos-steps li { counter-increment: step; display: flex; gap: 16px; margin-bottom: 28px; }
+.artigos-steps li::before {
+  content: counter(step);
+  flex-shrink: 0; width: 36px; height: 36px;
+  background: var(--red); color: var(--white);
+  border-radius: var(--r); display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-h); font-size: 20px; margin-top: 2px;
+}
+.artigos-steps li .step-text h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.artigos-steps li .step-text p { font-size: 13px; color: #666; line-height: 1.6; }
+.artigos-box {
+  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  border-radius: var(--r); padding: 32px;
+}
+.artigos-box h3 { font-family: var(--font-h); font-size: 28px; color: var(--white); margin-bottom: 16px; }
+.artigos-box p { font-size: 13px; color: #666; line-height: 1.7; margin-bottom: 24px; }
+.dates {
+  background: var(--bg2); border: 1px solid rgba(139,16,40,0.2);
+  border-radius: var(--r); padding: 16px 20px; margin-bottom: 24px;
+}
+.dates h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--red); margin-bottom: 10px;
+}
+.date-item {
+  display: flex; justify-content: space-between;
+  font-size: 13px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.date-item:last-child { border-bottom: none; }
+.date-item .dt { color: #777; }
+.date-item .dd { color: var(--white); font-weight: 600; }
+.artigos-btns { display: flex; flex-direction: column; gap: 12px; }
+
+/* ════════════════════════════════════════
+   PATROCINADORES
+════════════════════════════════════════ */
+.sponsors-tiers { display: flex; flex-direction: column; gap: 40px; }
+.sponsors-tier h3 {
+  font-family: var(--font-h); font-size: 22px; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sponsors-tier.ouro   h3 { color: var(--gold); }
+.sponsors-tier.prata  h3 { color: var(--silver); }
+.sponsors-tier.bronze h3 { color: var(--bronze); }
+.sponsors-logos { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.sponsor-logo {
+  background: var(--bg3); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r); padding: 20px 28px;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 160px; min-height: 80px; transition: border-color 0.2s;
+}
+.sponsor-logo img { max-height: 50px; max-width: 160px; object-fit: contain; filter: brightness(0.9); transition: filter 0.2s; }
+.sponsor-logo:hover { border-color: var(--red); }
+.sponsor-logo:hover img { filter: brightness(1); }
+.sponsor-logo-name { font-size: 15px; font-weight: 700; color: #888; }
+.sponsor-slot {
+  background: var(--bg3); border: 1px dashed rgba(196,30,58,0.35);
+  border-radius: var(--r); padding: 20px 28px;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 140px; min-height: 72px;
+  font-size: 12px; color: rgba(196,30,58,0.6); font-weight: 600;
+  text-align: center; transition: all 0.2s; cursor: pointer; text-decoration: none;
+}
+.sponsor-slot:hover { border-color: var(--red); color: var(--red); background: rgba(196,30,58,0.06); }
+.sponsors-cta {
+  margin-top: 48px; text-align: center;
+  background: linear-gradient(135deg, rgba(139,16,40,0.15), rgba(139,16,40,0.05));
+  border: 1px solid rgba(139,16,40,0.3); border-radius: var(--r); padding: 36px;
+}
+.sponsors-cta h3 { font-family: var(--font-h); font-size: 32px; color: var(--white); margin-bottom: 8px; }
+.sponsors-cta p { font-size: 14px; color: #666; margin-bottom: 24px; }
+.sponsors-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ════════════════════════════════════════
+   CONTATO
+════════════════════════════════════════ */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.contact-card {
+  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  border-radius: var(--r); padding: 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+  text-decoration: none; transition: border-color 0.2s, transform 0.2s;
+}
+.contact-card:hover { border-color: var(--red); transform: translateY(-3px); }
+.contact-icon { font-size: 24px; flex-shrink: 0; }
+.contact-info label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #444; display: block; margin-bottom: 4px;
+}
+.contact-info span { font-size: 14px; font-weight: 600; color: var(--white); }
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer {
+  background: var(--bg2); border-top: 1px solid rgba(139,16,40,0.2);
+  padding: 48px 0 32px;
+}
+.footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-h); font-size: 28px; color: var(--white); }
+.footer-logo span { color: var(--red); }
+.footer-desc { font-size: 13px; color: #444; margin-top: 4px; }
+.footer-institutions { display: flex; align-items: center; gap: 20px; margin-top: 16px; flex-wrap: wrap; }
+.footer-institution-logo {
+  height: 36px; opacity: 0.5; transition: opacity 0.2s; filter: brightness(0) invert(1);
+}
+.footer-institution-logo:hover { opacity: 0.8; }
+.footer-institution-text {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #333;
+}
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 13px; color: #444; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--red); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.04); padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; font-size: 12px; color: #333;
+}
+
+/* ════════════════════════════════════════
+   MOBILE
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(10,10,15,0.98);
+    padding: 16px; border-bottom: 1px solid rgba(139,16,40,0.2);
+    gap: 4px;
+  }
+  .nav-links.open a { padding: 10px 12px; }
+  .sobre-grid, .artigos-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(60px, 18vw, 100px); }
+  .countdown { gap: 10px; }
+  .countdown-box { min-width: 60px; padding: 10px 14px; }
+  .countdown-box .num { font-size: 32px; }
+  .section { padding: 64px 0; }
+  .footer-top { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAVBAR ════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">
+      <span class="badge">III</span>SIMPOMEC
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#programacao">Programação</a></li>
+      <li><a href="#palestrantes">Palestrantes</a></li>
+      <li><a href="#minicursos">Minicursos</a></li>
+      <li><a href="#artigos">Artigos</a></li>
+      <li><a href="#patrocinadores">Patrocinadores</a></li>
+      <li><a href="#minicursos" class="nav-cta">Inscreva-se</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">⚙ Outubro 2026 · UFPA Tucuruí · CAMTUC</div>
+
+    <!-- Gear + Wrench SVG Icon -->
+    <svg class="hero-icon" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hgbg" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#1E0008"/>
+          <stop offset="100%" stop-color="#0A0A0F"/>
+        </radialGradient>
+        <linearGradient id="hggf" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#E02040"/>
+          <stop offset="100%" stop-color="#7A0015"/>
+        </linearGradient>
+        <filter id="hglow">
+          <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#C41E3A" flood-opacity="0.7"/>
+        </filter>
+      </defs>
+      <circle cx="160" cy="160" r="160" fill="url(#hgbg)"/>
+      <g transform="translate(160,160)" filter="url(#hglow)">
+        <g fill="url(#hggf)">
+          <rect x="-7" y="-88" width="14" height="20" rx="3"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(30)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(60)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(90)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(120)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(150)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(180)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(210)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(240)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(270)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(300)"/>
+          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(330)"/>
+        </g>
+        <circle cx="0" cy="0" r="74" fill="url(#hggf)" opacity="0.08"/>
+        <circle cx="0" cy="0" r="74" fill="none" stroke="url(#hggf)" stroke-width="17"/>
+        <circle cx="0" cy="0" r="57" fill="#0C0C18"/>
+        <g transform="translate(0,4)" opacity="0.93">
+          <path d="M -13,-50 A 26,26 0 1 0 13,-50"
+                fill="none" stroke="white" stroke-width="15" stroke-linecap="round"/>
+          <rect x="-7" y="-11" width="14" height="56" rx="7" fill="white"/>
+          <circle cx="0" cy="-11" r="8" fill="white"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="hero-title"><span class="iii">III</span> SIMPOMEC</div>
+    <div class="hero-subtitle">Simpósio de Engenharia · UFPA Tucuruí · 2026</div>
+
+    <div class="countdown" id="countdown">
+      <div class="countdown-box"><span class="num" id="cd-d">--</span><span class="unit">Dias</span></div>
+      <div class="countdown-box"><span class="num" id="cd-h">--</span><span class="unit">Horas</span></div>
+      <div class="countdown-box"><span class="num" id="cd-m">--</span><span class="unit">Min</span></div>
+      <div class="countdown-box"><span class="num" id="cd-s">--</span><span class="unit">Seg</span></div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#minicursos" class="btn btn-primary">⚙ Inscrever em Minicurso</a>
+      <a href="#artigos" class="btn btn-outline">📄 Submeter Artigo</a>
+    </div>
+
+    <div class="hero-courses">
+      <span>Eng. Mecânica</span>
+      <span>Eng. Elétrica</span>
+      <span>Eng. Civil</span>
+      <span>Eng. Sanitária e Ambiental</span>
+      <span>Computação e Física</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SOBRE ════ -->
+<section class="section section-alt" id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <div class="eyebrow">01 · Sobre o Evento</div>
+        <h2 class="section-title">O QUE É O SIMPOMEC</h2>
+        <div class="section-line"></div>
+        <p>O III Simpósio de Engenharia (SIMPOMEC) é o maior evento acadêmico do Núcleo de Engenharia da UFPA Tucuruí. Uma semana inteira dedicada ao desenvolvimento técnico, científico e profissional dos estudantes de engenharia.</p>
+        <p>Reunindo alunos de 5 cursos de engenharia junto com profissionais e empresas do mercado, o SIMPOMEC conecta a academia à indústria em uma das regiões com maior potencial energético e industrial do Brasil.</p>
+        <p>Organizado pelo <strong style="color:var(--white)">CAEM — Centro Acadêmico de Engenharia Mecânica</strong>, o evento conta com apoio da Pró-Reitoria de Extensão (PROEX) da UFPA.</p>
+        <br>
+        <a href="#contato" class="btn btn-primary">Entre em contato</a>
+      </div>
+      <div class="sobre-stats">
+        <div class="stat-card">
+          <div class="num">200+</div>
+          <div class="lbl">Participantes esperados</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">5</div>
+          <div class="lbl">Cursos reunidos</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">7</div>
+          <div class="lbl">Dias de evento</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">3ª</div>
+          <div class="lbl">Edição do simpósio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROGRAMAÇÃO ════ -->
+<section class="section" id="programacao">
+  <div class="container">
+    <div class="eyebrow">02 · Agenda</div>
+    <h2 class="section-title">PROGRAMAÇÃO</h2>
+    <div class="section-line"></div>
+
+    <div class="prog-tabs">
+      <button class="prog-tab active" onclick="showDay(1, this)">Dia 1</button>
+      <button class="prog-tab" onclick="showDay(2, this)">Dia 2</button>
+      <button class="prog-tab" onclick="showDay(3, this)">Dia 3</button>
+      <button class="prog-tab" onclick="showDay(4, this)">Dia 4</button>
+      <button class="prog-tab" onclick="showDay(5, this)">Dia 5</button>
+    </div>
+
+    <div class="prog-day active" id="day-1">
+      <div class="prog-item">
+        <div class="prog-time">08:00</div>
+        <div class="prog-content"><h4>Credenciamento e Recepção<span class="prog-type abertura">Abertura</span></h4><p>Entrega de kits e cadastro dos participantes</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">09:00</div>
+        <div class="prog-content"><h4>Cerimônia de Abertura Oficial<span class="prog-type abertura">Abertura</span></h4><p>Discurso do CAEM, PROEX, patrocinadores e convidados</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">10:30</div>
+        <div class="prog-content"><h4>Palestra de Abertura — A Engenharia no Sudeste Paraense<span class="prog-type palestra">Palestra</span></h4><p>Palestrante a confirmar · Auditório Principal</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">14:00</div>
+        <div class="prog-content"><h4>Minicurso 01 — A confirmar<span class="prog-type minicurso">Minicurso</span></h4><p>Com certificado e horas de extensão · Sala 01</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">16:00</div>
+        <div class="prog-content"><h4>Palestra Técnica — Empresa patrocinadora<span class="prog-type palestra">Palestra</span></h4><p>A confirmar · Auditório Principal</p></div>
+      </div>
+    </div>
+
+    <div class="prog-day" id="day-2">
+      <div class="prog-item">
+        <div class="prog-time">08:30</div>
+        <div class="prog-content"><h4>Minicurso 02 — A confirmar<span class="prog-type minicurso">Minicurso</span></h4><p>Com certificado e horas de extensão · Sala 01</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">10:30</div>
+        <div class="prog-content"><h4>Palestra Técnica — A confirmar<span class="prog-type palestra">Palestra</span></h4><p>Auditório Principal</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">14:00</div>
+        <div class="prog-content"><h4>Minicurso 03 — A confirmar<span class="prog-type minicurso">Minicurso</span></h4><p>Com certificado e horas de extensão · Sala 02</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">16:00</div>
+        <div class="prog-content"><h4>Mesa Redonda — Mercado de Trabalho em Engenharia<span class="prog-type palestra">Palestra</span></h4><p>Profissionais convidados · Auditório Principal</p></div>
+      </div>
+    </div>
+
+    <div class="prog-day" id="day-3">
+      <div class="prog-item">
+        <div class="prog-time">08:30</div>
+        <div class="prog-content"><h4>Minicurso 04 — A confirmar<span class="prog-type minicurso">Minicurso</span></h4><p>Com certificado e horas de extensão</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">10:30</div>
+        <div class="prog-content"><h4>Palestra Técnica — A confirmar<span class="prog-type palestra">Palestra</span></h4><p>Auditório Principal</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">14:00</div>
+        <div class="prog-content"><h4>Apresentação de Artigos — Sessão 1<span class="prog-type artigo">Artigos</span></h4><p>Banca examinadora avalia trabalhos submetidos</p></div>
+      </div>
+    </div>
+
+    <div class="prog-day" id="day-4">
+      <div class="prog-item">
+        <div class="prog-time">08:30</div>
+        <div class="prog-content"><h4>Minicurso 05 — A confirmar<span class="prog-type minicurso">Minicurso</span></h4><p>Com certificado e horas de extensão</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">10:30</div>
+        <div class="prog-content"><h4>Apresentação de Artigos — Sessão 2<span class="prog-type artigo">Artigos</span></h4><p>Banca examinadora avalia trabalhos submetidos</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">14:00</div>
+        <div class="prog-content"><h4>Workshop Prático — A confirmar<span class="prog-type minicurso">Minicurso</span></h4><p>Atividade hands-on</p></div>
+      </div>
+    </div>
+
+    <div class="prog-day" id="day-5">
+      <div class="prog-item">
+        <div class="prog-time">08:30</div>
+        <div class="prog-content"><h4>Palestra de Encerramento<span class="prog-type palestra">Palestra</span></h4><p>Palestrante convidado · Auditório Principal</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">10:30</div>
+        <div class="prog-content"><h4>Apresentação de Artigos — Sessão Final<span class="prog-type artigo">Artigos</span></h4><p>Resultados e melhores trabalhos</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-time">15:00</div>
+        <div class="prog-content"><h4>Cerimônia de Encerramento e Entrega de Certificados<span class="prog-type abertura">Encerramento</span></h4><p>Premiações e confraternização</p></div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px; font-size:13px; color:#444; text-align:center; font-style:italic;">
+      Programação sujeita a alterações. Acompanhe pelo Instagram
+      <a href="https://instagram.com/caemtuc" target="_blank" style="color:var(--red); text-decoration:none;">@caemtuc</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ════ PALESTRANTES ════ -->
+<section class="section section-alt" id="palestrantes">
+  <div class="container">
+    <div class="eyebrow">03 · Palestrantes</div>
+    <h2 class="section-title">CONFIRMADOS</h2>
+    <div class="section-line"></div>
+
+    <div class="speakers-grid">
+      <!--
+        Para adicionar um palestrante confirmado:
+        <div class="speaker-card">
+          <div class="speaker-avatar"><img src="assets/speakers/nome.jpg" alt="Nome"></div>
+          <div class="speaker-name">Nome Completo</div>
+          <div class="speaker-role">Cargo / Especialidade</div>
+          <div class="speaker-company">EMPRESA</div>
+          <span class="speaker-status confirmed">Confirmado</span>
+        </div>
+      -->
+      <div class="speaker-card">
+        <div class="speaker-avatar">👤</div>
+        <div class="speaker-name">A confirmar</div>
+        <div class="speaker-role">Engenheiro Sênior</div>
+        <div class="speaker-company">AXIA Energia</div>
+        <span class="speaker-status tba">Em breve</span>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-avatar">👤</div>
+        <div class="speaker-name">A confirmar</div>
+        <div class="speaker-role">Especialista em Processos</div>
+        <div class="speaker-company">HYDRO / VALE</div>
+        <span class="speaker-status tba">Em breve</span>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-avatar">🎓</div>
+        <div class="speaker-name">Prof. UFPA Tucuruí</div>
+        <div class="speaker-role">Docente FEM</div>
+        <div class="speaker-company">UFPA</div>
+        <span class="speaker-status tba">Em breve</span>
+      </div>
+      <div class="speaker-card" style="border-style:dashed; border-color:rgba(139,16,40,0.3)">
+        <div class="speaker-avatar" style="border-style:dashed">➕</div>
+        <div class="speaker-name" style="color:#333">Sua empresa aqui</div>
+        <div class="speaker-role" style="color:#333">Seja patrocinador Ouro</div>
+        <div class="speaker-company">Naming rights disponível</div>
+        <a href="#patrocinadores" class="speaker-status confirmed" style="text-decoration:none">Ver cotas</a>
+      </div>
+    </div>
+    <p style="margin-top:32px; font-size:13px; color:#444; text-align:center; font-style:italic;">
+      Palestrantes confirmados serão anunciados gradualmente. Acompanhe
+      <a href="https://instagram.com/caemtuc" target="_blank" style="color:var(--red); text-decoration:none;">@caemtuc</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ════ MINICURSOS ════ -->
+<section class="section" id="minicursos">
+  <div class="container">
+    <div class="eyebrow">04 · Inscrições</div>
+    <h2 class="section-title">MINICURSOS</h2>
+    <div class="section-line"></div>
+    <p style="font-size:14px; color:#666; margin-bottom:36px; max-width:600px;">
+      Todos os minicursos emitem <strong style="color:var(--white)">certificado oficial</strong> com carga horária de extensão validada pela UFPA. Vagas limitadas — inscreva-se com antecedência.
+    </p>
+
+    <div class="courses-grid">
+      <!--
+        COMO ATUALIZAR MINICURSOS:
+        - Substitua "Minicurso 01" pelo nome real
+        - Troque "A definir" pela data (ex: "05 Out")
+        - Atualize o link do Google Forms (href="https://forms.gle/SEU_LINK")
+        - Para marcar esgotado: class="vagas esgotado" no span de vagas
+      -->
+      <div class="course-card">
+        <div class="course-header">
+          <div class="course-icon">⚙</div>
+          <div class="course-title">Minicurso 01</div>
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>📅 A definir</span>
+            <span>⏱ 4h</span>
+            <span>📍 Sala 01</span>
+          </div>
+          <p class="course-desc">Tema a confirmar. Inscrições abertas em breve. Acompanhe o Instagram @caemtuc para novidades.</p>
+          <div class="course-footer">
+            <div class="vagas">Vagas: <span>30</span></div>
+            <a href="https://forms.gle/SUBSTITUIR_LINK_MC1" target="_blank" class="btn btn-primary" style="font-size:11px; padding:10px 18px;">Inscrever-se</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-header">
+          <div class="course-icon">🛠</div>
+          <div class="course-title">Minicurso 02</div>
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>📅 A definir</span>
+            <span>⏱ 4h</span>
+            <span>📍 Sala 01</span>
+          </div>
+          <p class="course-desc">Tema a confirmar. Inscrições abertas em breve.</p>
+          <div class="course-footer">
+            <div class="vagas">Vagas: <span>30</span></div>
+            <a href="https://forms.gle/SUBSTITUIR_LINK_MC2" target="_blank" class="btn btn-primary" style="font-size:11px; padding:10px 18px;">Inscrever-se</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-header">
+          <div class="course-icon">📐</div>
+          <div class="course-title">Minicurso 03</div>
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>📅 A definir</span>
+            <span>⏱ 4h</span>
+            <span>📍 Sala 02</span>
+          </div>
+          <p class="course-desc">Tema a confirmar. Inscrições abertas em breve.</p>
+          <div class="course-footer">
+            <div class="vagas">Vagas: <span>30</span></div>
+            <a href="https://forms.gle/SUBSTITUIR_LINK_MC3" target="_blank" class="btn btn-primary" style="font-size:11px; padding:10px 18px;">Inscrever-se</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" style="border-style:dashed; border-color:rgba(139,16,40,0.3);">
+        <div class="course-header" style="background:rgba(139,16,40,0.06);">
+          <div class="course-icon">➕</div>
+          <div class="course-title" style="color:#333">Mais minicursos em breve</div>
+        </div>
+        <div class="course-body">
+          <p class="course-desc">A programação completa será divulgada. Siga @caemtuc para não perder as novidades.</p>
+          <div class="course-footer" style="border-top:none;">
+            <a href="https://instagram.com/caemtuc" target="_blank" class="btn btn-outline" style="font-size:11px; padding:10px 18px; width:100%; justify-content:center;">Seguir @caemtuc</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ARTIGOS ════ -->
+<section class="section section-alt" id="artigos">
+  <div class="container">
+    <div class="eyebrow">05 · Publicação Científica</div>
+    <h2 class="section-title">SUBMISSÃO DE ARTIGOS</h2>
+    <div class="section-line"></div>
+
+    <div class="artigos-grid">
+      <div>
+        <p style="font-size:14px; color:#666; margin-bottom:28px; line-height:1.8;">
+          O III SIMPOMEC conta com sessões de apresentação de artigos científicos avaliados por uma
+          <strong style="color:var(--white)">banca examinadora</strong>. A banca avalia, orienta e certifica os trabalhos apresentados.
+        </p>
+        <ol class="artigos-steps">
+          <li>
+            <div class="step-text">
+              <h4>Baixe o template oficial</h4>
+              <p>Use o template do SIMPOMEC 2026 para formatar seu artigo corretamente conforme as normas.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <h4>Escreva seu artigo</h4>
+              <p>Elabore seu trabalho seguindo as normas de formatação. Máximo de 8 páginas em PDF.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <h4>Submeta pelo formulário</h4>
+              <p>Envie o arquivo PDF pelo formulário de submissão antes do prazo final.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <h4>Aguarde a avaliação</h4>
+              <p>A banca examinadora enviará feedback e solicitará correções se necessário.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <h4>Apresente no evento</h4>
+              <p>Autores aprovados apresentarão seus trabalhos no auditório durante o simpósio.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="artigos-box">
+        <h3>INFORMAÇÕES DE SUBMISSÃO</h3>
+        <p>Artigos de qualquer área de engenharia são bem-vindos. Trabalhos de graduação, iniciação científica, TCC e projetos de extensão também são aceitos.</p>
+        <div class="dates">
+          <h4>Datas Importantes</h4>
+          <div class="date-item"><span class="dt">Abertura de submissões</span><span class="dd">A confirmar</span></div>
+          <div class="date-item"><span class="dt">Prazo final de envio</span><span class="dd">A confirmar</span></div>
+          <div class="date-item"><span class="dt">Resultado da avaliação</span><span class="dd">A confirmar</span></div>
+          <div class="date-item"><span class="dt">Prazo para correções</span><span class="dd">A confirmar</span></div>
+          <div class="date-item"><span class="dt">Apresentações no evento</span><span class="dd">Outubro 2026</span></div>
+        </div>
+        <div class="artigos-btns">
+          <!-- SUBSTITUIR: coloque o link do Google Drive do template aqui -->
+          <a href="https://drive.google.com/SUBSTITUIR_LINK_TEMPLATE" target="_blank" class="btn btn-outline" style="justify-content:center;">
+            📥 Baixar Template do Artigo
+          </a>
+          <!-- SUBSTITUIR: coloque o link do Google Forms de submissão aqui -->
+          <a href="https://forms.gle/SUBSTITUIR_LINK_SUBMISSAO" target="_blank" class="btn btn-primary" style="justify-content:center;">
+            📤 Submeter Artigo
+          </a>
+        </div>
+        <p style="font-size:11px; color:#333; margin-top:16px; text-align:center;">
+          Dúvidas? <a href="mailto:caemtucurui@gmail.com" style="color:var(--red); text-decoration:none;">caemtucurui@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PATROCINADORES ════ -->
+<section class="section" id="patrocinadores">
+  <div class="container">
+    <div class="eyebrow">06 · Apoio</div>
+    <h2 class="section-title">PATROCINADORES</h2>
+    <div class="section-line"></div>
+
+    <div class="sponsors-tiers">
+      <!-- COTA OURO -->
+      <div class="sponsors-tier ouro">
+        <h3>🥇 Ouro <span style="font-size:14px; font-family:var(--font-b); font-weight:400; color:#555; margin-left:4px;">R$ 2.000</span></h3>
+        <div class="sponsors-logos">
+          <!--
+            Para adicionar patrocinador Ouro:
+            <div class="sponsor-logo">
+              <img src="assets/sponsors/nome-empresa.png" alt="Nome Empresa">
+            </div>
+          -->
+          <a class="sponsor-slot" href="#contato">Cota disponível<br><small style="font-size:10px; opacity:0.7;">Naming rights inclusos</small></a>
+        </div>
+      </div>
+
+      <!-- COTA PRATA -->
+      <div class="sponsors-tier prata">
+        <h3>🥈 Prata <span style="font-size:14px; font-family:var(--font-b); font-weight:400; color:#555; margin-left:4px;">R$ 1.000</span></h3>
+        <div class="sponsors-logos">
+          <a class="sponsor-slot" href="#contato">Cota disponível</a>
+          <a class="sponsor-slot" href="#contato">Cota disponível</a>
+        </div>
+      </div>
+
+      <!-- COTA BRONZE -->
+      <div class="sponsors-tier bronze">
+        <h3>🥉 Bronze <span style="font-size:14px; font-family:var(--font-b); font-weight:400; color:#555; margin-left:4px;">R$ 500</span></h3>
+        <div class="sponsors-logos">
+          <a class="sponsor-slot" href="#contato">Cota disponível</a>
+          <a class="sponsor-slot" href="#contato">Cota disponível</a>
+          <a class="sponsor-slot" href="#contato">Cota disponível</a>
+          <a class="sponsor-slot" href="#contato">Cota disponível</a>
+        </div>
+      </div>
+
+      <!-- APOIO INSTITUCIONAL -->
+      <div class="sponsors-tier" style="border-top: 1px solid rgba(255,255,255,0.04); padding-top: 32px;">
+        <h3 style="color: var(--muted);">Apoio Institucional</h3>
+        <div class="sponsors-logos">
+          <div class="sponsor-logo">
+            <img src="assets/logos/logo-ufpa.png" alt="UFPA" onerror="this.parentElement.innerHTML='<span class=\'sponsor-logo-name\'>UFPA</span>'">
+          </div>
+          <div class="sponsor-logo">
+            <img src="assets/logos/logo-fem.png" alt="FEM — UFPA Tucuruí" onerror="this.parentElement.innerHTML='<span class=\'sponsor-logo-name\'>FEM · UFPA</span>'">
+          </div>
+          <div class="sponsor-logo">
+            <span class="sponsor-logo-name" style="font-size:12px; color:#555; font-style:italic;">PROEX · UFPA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sponsors-cta">
+      <h3>SEJA PATROCINADOR</h3>
+      <p>Meta: R$ 8.000 · Cotas Bronze, Prata e Ouro disponíveis · Presença garantida para 200+ participantes</p>
+      <div class="sponsors-cta-btns">
+        <!-- SUBSTITUIR: link do portfólio no Google Drive -->
+        <a href="https://drive.google.com/SUBSTITUIR_LINK_PORTFOLIO" target="_blank" class="btn btn-outline">📄 Ver Portfólio de Patrocínio</a>
+        <a href="mailto:caemtucurui@gmail.com?subject=Patrocínio SIMPOMEC 2026" class="btn btn-primary">📧 Quero Patrocinar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTATO ════ -->
+<section class="section section-alt" id="contato">
+  <div class="container">
+    <div class="eyebrow">07 · Fale Conosco</div>
+    <h2 class="section-title">CONTATO</h2>
+    <div class="section-line"></div>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:caemtucurui@gmail.com">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <label>E-mail</label>
+          <span>caemtucurui@gmail.com</span>
+        </div>
+      </a>
+      <a class="contact-card" href="https://wa.me/5594925970449" target="_blank" rel="noopener">
+        <div class="contact-icon">📱</div>
+        <div class="contact-info">
+          <label>WhatsApp</label>
+          <span>+55 94 9259-7049</span>
+        </div>
+      </a>
+      <a class="contact-card" href="https://instagram.com/caemtuc" target="_blank" rel="noopener">
+        <div class="contact-icon">📷</div>
+        <div class="contact-info">
+          <label>Instagram</label>
+          <span>@caemtuc</span>
+        </div>
+      </a>
+      <a class="contact-card" href="https://maps.app.goo.gl/SUBSTITUIR_MAPS" target="_blank" rel="noopener">
+        <div class="contact-icon">📍</div>
+        <div class="contact-info">
+          <label>Local</label>
+          <span>UFPA · Campus Tucuruí (CAMTUC)</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><span>III</span> SIMPOMEC 2026</div>
+        <div class="footer-desc">Simpósio de Engenharia · UFPA Tucuruí · Outubro 2026</div>
+        <div class="footer-desc" style="margin-top:4px; color:#2a2a3a;">Organizado pelo CAEM — Centro Acadêmico de Engenharia Mecânica</div>
+        <div class="footer-institutions">
+          <img src="assets/logos/logo-ufpa.png" alt="UFPA" class="footer-institution-logo"
+               onerror="this.outerHTML='<span class=\'footer-institution-text\'>UFPA</span>'">
+          <img src="assets/logos/logo-fem.png" alt="FEM" class="footer-institution-logo"
+               onerror="this.outerHTML='<span class=\'footer-institution-text\'>FEM</span>'">
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#programacao">Programação</a>
+        <a href="#palestrantes">Palestrantes</a>
+        <a href="#minicursos">Minicursos</a>
+        <a href="#artigos">Artigos</a>
+        <a href="#patrocinadores">Patrocínio</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CAEM · UFPA Tucuruí · Todos os direitos reservados</span>
+      <span style="color:var(--red);">FORJAMOS IDEIAS. PROJETAMOS O FUTURO.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ SCRIPTS ════ -->
+<script>
+// ── Countdown ──
+const EVENT_DATE = new Date('2026-10-05T08:00:00');
+function updateCountdown() {
+  const diff = EVENT_DATE - new Date();
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML =
+      '<div class="countdown-box"><span class="num" style="font-size:32px">🎉</span><span class="unit">Acontecendo!</span></div>';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── Schedule tabs ──
+function showDay(n, btn) {
+  document.querySelectorAll('.prog-day').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.prog-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('day-' + n).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── Mobile nav ──
+const navToggle = document.getElementById('nav-toggle');
+const navLinks  = document.getElementById('nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+// Close on link click
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ── Navbar shadow on scroll ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.5)' : 'none';
+}, { passive: true });
+
+// ── Active nav link highlight ──
+const sections = document.querySelectorAll('section[id]');
+const links    = document.querySelectorAll('.nav-links a[href^="#"]');
+const ioNav = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(a => a.classList.remove('active-link'));
+      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active-link');
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px' });
+sections.forEach(s => ioNav.observe(s));
+</script>
+</body>
+</html>
