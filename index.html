@@ -134,7 +134,7 @@ body {
 }
 .hero::before {
   content: '⚙';
-  position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
   font-size: 700px; color: rgba(139,16,40,0.04); line-height: 1;
   pointer-events: none; user-select: none;
 }
@@ -148,6 +148,7 @@ body {
 }
 .hero-icon {
   width: 160px; height: 160px; margin: 0 auto 28px;
+  display: block;
   filter: drop-shadow(0 0 40px rgba(196,30,58,0.5));
 }
 .hero-title {
