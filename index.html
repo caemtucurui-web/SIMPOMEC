@@ -412,6 +412,80 @@ footer {
 }
 
 /* ════════════════════════════════════════
+   INSCRIÇÃO
+════════════════════════════════════════ */
+.inscricao-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
+.inscricao-info h3 { font-family: var(--font-h); font-size: 28px; color: var(--white); margin-bottom: 16px; }
+.inscricao-info p { font-size: 14px; color: #777; line-height: 1.8; margin-bottom: 20px; }
+.inscricao-check { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.inscricao-check li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #888; }
+.inscricao-check li::before { content: '✓'; color: var(--red); font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+.form-box {
+  background: var(--bg3); border: 1px solid rgba(139,16,40,0.25);
+  border-radius: var(--r); padding: 36px;
+}
+.form-box h3 { font-family: var(--font-h); font-size: 26px; color: var(--white); margin-bottom: 4px; }
+.form-box .form-subtitle { font-size: 12px; color: #444; margin-bottom: 28px; text-transform: uppercase; letter-spacing: 0.1em; }
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #555; margin-bottom: 6px;
+}
+.form-group label .req { color: var(--red); margin-left: 2px; }
+.form-control {
+  width: 100%; background: var(--bg2); border: 1px solid rgba(139,16,40,0.2);
+  border-radius: var(--r); padding: 11px 14px;
+  font-family: var(--font-b); font-size: 13px; color: var(--white);
+  transition: border-color 0.2s; outline: none;
+}
+.form-control:focus { border-color: var(--red); }
+.form-control option { background: var(--bg2); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-divider {
+  border: none; border-top: 1px solid rgba(255,255,255,0.05);
+  margin: 24px 0;
+}
+.form-section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--red); margin-bottom: 16px; display: block;
+}
+.radio-group { display: flex; flex-direction: column; gap: 10px; }
+.radio-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border: 1px solid rgba(139,16,40,0.15);
+  border-radius: var(--r); padding: 10px 14px; cursor: pointer;
+  transition: border-color 0.2s;
+}
+.radio-item:has(input:checked) { border-color: var(--red); background: rgba(196,30,58,0.08); }
+.radio-item input[type="radio"] { accent-color: var(--red); width: 15px; height: 15px; flex-shrink: 0; }
+.radio-item .radio-label { font-size: 13px; color: var(--text); }
+.radio-item .radio-sub { font-size: 11px; color: #444; display: block; margin-top: 1px; }
+.checkbox-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border: 1px solid rgba(139,16,40,0.15);
+  border-radius: var(--r); padding: 12px 14px; cursor: pointer;
+  transition: border-color 0.2s;
+}
+.checkbox-item:has(input:checked) { border-color: var(--red); background: rgba(196,30,58,0.08); }
+.checkbox-item input[type="checkbox"] { accent-color: var(--red); width: 15px; height: 15px; flex-shrink: 0; }
+.form-submit {
+  width: 100%; margin-top: 24px; padding: 15px;
+  font-family: var(--font-b); font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  background: var(--red); color: var(--white); border: none;
+  border-radius: var(--r); cursor: pointer; transition: all 0.2s;
+}
+.form-submit:hover { background: #E02040; transform: translateY(-1px); }
+.form-submit:disabled { background: #333; color: #555; cursor: not-allowed; transform: none; }
+.form-note { font-size: 11px; color: #333; text-align: center; margin-top: 14px; line-height: 1.6; }
+.form-success {
+  display: none; text-align: center; padding: 32px 20px;
+}
+.form-success .success-icon { font-size: 48px; margin-bottom: 12px; }
+.form-success h4 { font-family: var(--font-h); font-size: 28px; color: var(--white); margin-bottom: 8px; }
+.form-success p { font-size: 14px; color: #666; }
+
+/* ════════════════════════════════════════
    MOBILE
 ════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -425,7 +499,8 @@ footer {
     gap: 4px;
   }
   .nav-links.open a { padding: 10px 12px; }
-  .sobre-grid, .artigos-grid { grid-template-columns: 1fr; }
+  .sobre-grid, .artigos-grid, .inscricao-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
   .hero-title { font-size: clamp(60px, 18vw, 100px); }
   .countdown { gap: 10px; }
   .countdown-box { min-width: 60px; padding: 10px 14px; }
@@ -450,7 +525,7 @@ footer {
       <li><a href="#minicursos">Minicursos</a></li>
       <li><a href="#artigos">Artigos</a></li>
       <li><a href="#patrocinadores">Patrocinadores</a></li>
-      <li><a href="#minicursos" class="nav-cta">Inscreva-se</a></li>
+      <li><a href="#inscricao" class="nav-cta">Inscreva-se</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -968,6 +1043,154 @@ footer {
   </div>
 </section>
 
+<!-- ════ INSCRIÇÃO ════ -->
+<section class="section section-alt" id="inscricao">
+  <div class="container">
+    <div class="eyebrow">00 · Participe</div>
+    <h2 class="section-title">INSCRIÇÃO NO EVENTO</h2>
+    <div class="section-line"></div>
+
+    <div class="inscricao-grid">
+      <!-- Info lateral -->
+      <div class="inscricao-info">
+        <h3>Garanta sua vaga no III SIMPOMEC</h3>
+        <p>A inscrição é gratuita e dá acesso a todas as palestras, mesa redonda e cerimônias do evento. Minicursos têm vagas limitadas — escolha o seu na inscrição.</p>
+        <ul class="inscricao-check">
+          <li>Acesso a todas as palestras e mesas redondas</li>
+          <li>Certificado de participação com carga horária</li>
+          <li>Certificado de extensão para minicurso frequentado</li>
+          <li>Kit do participante (sujeito à disponibilidade)</li>
+          <li>Networking com profissionais e empresas</li>
+        </ul>
+        <div class="stat-card" style="text-align:left; padding:20px 24px;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#555; margin-bottom:8px;">Local e data</div>
+          <div style="font-size:15px; font-weight:700; color:var(--white); margin-bottom:4px;">📍 UFPA Tucuruí · CAMTUC</div>
+          <div style="font-size:14px; color:#666;">📅 Outubro de 2026</div>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="form-box">
+        <h3>FORMULÁRIO DE INSCRIÇÃO</h3>
+        <div class="form-subtitle">Preencha todos os campos obrigatórios</div>
+
+        <form id="inscricao-form" action="https://formspree.io/f/SUBSTITUIR_ID" method="POST">
+          <input type="hidden" name="_subject" value="Nova inscrição — III SIMPOMEC 2026">
+          <input type="hidden" name="_language" value="pt">
+
+          <span class="form-section-label">Dados Pessoais</span>
+
+          <div class="form-group">
+            <label>Nome Completo <span class="req">*</span></label>
+            <input class="form-control" type="text" name="nome" placeholder="Seu nome completo" required>
+          </div>
+
+          <div class="form-group">
+            <label>E-mail <span class="req">*</span></label>
+            <input class="form-control" type="email" name="email" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Curso <span class="req">*</span></label>
+              <select class="form-control" name="curso" required>
+                <option value="" disabled selected>Selecione...</option>
+                <option>Eng. Mecânica</option>
+                <option>Eng. Elétrica</option>
+                <option>Eng. Civil</option>
+                <option>Eng. Sanitária e Ambiental</option>
+                <option>Computação</option>
+                <option>Física</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Matrícula <span class="req">*</span></label>
+              <input class="form-control" type="text" name="matricula" placeholder="Matrícula ou CPF" required>
+              <div style="font-size:10px; color:#333; margin-top:4px;">Se não tiver matrícula UFPA, informe o CPF</div>
+            </div>
+          </div>
+
+          <hr class="form-divider">
+
+          <span class="form-section-label">Apresentação de Artigo</span>
+          <div class="form-group">
+            <div class="radio-group">
+              <label class="radio-item">
+                <input type="radio" name="artigo" value="Não vou apresentar artigo" checked>
+                <div>
+                  <span class="radio-label">Não vou apresentar artigo</span>
+                  <span class="radio-sub">Participarei apenas como ouvinte</span>
+                </div>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="artigo" value="Sim, vou apresentar artigo">
+                <div>
+                  <span class="radio-label">Sim, vou apresentar artigo</span>
+                  <span class="radio-sub">Precisarei submeter o trabalho separadamente</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <hr class="form-divider">
+
+          <span class="form-section-label">Minicurso — Escolha apenas um</span>
+          <p style="font-size:12px; color:#444; margin-bottom:14px; margin-top:-10px;">Vagas limitadas. A programação completa será divulgada em breve.</p>
+          <div class="form-group">
+            <div class="radio-group">
+              <label class="radio-item">
+                <input type="radio" name="minicurso" value="Minicurso 01" required>
+                <div>
+                  <span class="radio-label">Minicurso 01</span>
+                  <span class="radio-sub">Tema a confirmar · 4h · Sala 01</span>
+                </div>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="minicurso" value="Minicurso 02">
+                <div>
+                  <span class="radio-label">Minicurso 02</span>
+                  <span class="radio-sub">Tema a confirmar · 4h · Sala 01</span>
+                </div>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="minicurso" value="Minicurso 03">
+                <div>
+                  <span class="radio-label">Minicurso 03</span>
+                  <span class="radio-sub">Tema a confirmar · 4h · Sala 02</span>
+                </div>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="minicurso" value="Nenhum minicurso">
+                <div>
+                  <span class="radio-label">Não farei minicurso</span>
+                  <span class="radio-sub">Participarei apenas das palestras</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="form-submit" id="submit-btn">
+            Confirmar Inscrição →
+          </button>
+          <p class="form-note">
+            Seus dados são usados exclusivamente para organização do evento.<br>
+            Dúvidas: <a href="mailto:caemtucurui@gmail.com" style="color:var(--red); text-decoration:none;">caemtucurui@gmail.com</a>
+          </p>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✅</div>
+          <h4>INSCRIÇÃO CONFIRMADA!</h4>
+          <p>Sua inscrição foi recebida com sucesso.<br>
+          Você receberá uma confirmação no e-mail informado.<br><br>
+          Nos vemos no III SIMPOMEC 2026!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════ CONTATO ════ -->
 <section class="section section-alt" id="contato">
   <div class="container">
@@ -1085,6 +1308,36 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').style.boxShadow =
     window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.5)' : 'none';
 }, { passive: true });
+
+// ── Formulário de inscrição ──
+const form = document.getElementById('inscricao-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Confirmar Inscrição →';
+        alert('Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Confirmar Inscrição →';
+      alert('Erro de conexão. Tente novamente.');
+    }
+  });
+}
 
 // ── Active nav link highlight ──
 const sections = document.querySelectorAll('section[id]');
