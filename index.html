@@ -128,14 +128,14 @@ body {
 }
 .nav-logo {
   display:flex; align-items:center; gap:var(--s3);
-  font-family:var(--fh); font-size:20px; color:var(--aco);
+  font-family:var(--fh); font-size:22px; color:var(--aco);
   letter-spacing:0.08em; text-decoration:none;
 }
-.nav-logo img { height:36px; width:auto; }
+.nav-logo img { height:40px; width:auto; }
 .nav-logo .iii { color:var(--touro); }
 .nav-logo .badge {
   background:var(--touro); color:var(--aco);
-  font-size:10px; padding:2px 7px; border-radius:var(--r);
+  font-size:10px; padding:2px 8px; border-radius:var(--r);
   font-family:var(--fb); font-weight:900; letter-spacing:0.06em;
 }
 .nav-links { display:flex; align-items:center; gap:2px; list-style:none; }
@@ -215,11 +215,10 @@ body {
   0%,100% { opacity:1; } 50% { opacity:0.3; }
 }
 
-/* Logo CAEM — pequena, contexto */
+/* Logo CAEM — destaque */
 .hero-logo {
-  height:72px; width:auto; margin-bottom:var(--s5);
-  filter:drop-shadow(0 0 20px rgba(140,43,190,0.4));
-  opacity:0.9;
+  height:160px; width:auto; margin-bottom:var(--s6);
+  filter:drop-shadow(0 0 48px rgba(140,43,190,0.6));
 }
 
 /* Título em escala de pôster */
@@ -669,7 +668,7 @@ footer {
   <div class="nav-inner">
     <a class="nav-logo" href="#hero">
       <img src="assets/logos/logo-caem-roxo.png" alt="CAEM">
-      <span><span class="badge">III</span>SIMPOMEC</span>
+      <span class="badge">III</span><span>SIMPOMEC</span>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#sobre">Sobre</a></li>
