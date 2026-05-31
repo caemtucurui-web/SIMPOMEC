@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="III SIMPOMEC 2026 — Simpósio de Engenharia da UFPA Tucuruí. Palestras, minicursos, apresentação de artigos e networking. Outubro 2026.">
-<meta name="theme-color" content="#C41E3A">
+<meta name="theme-color" content="#8C2BBE">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn preview) -->
 <meta property="og:title" content="III SIMPOMEC 2026 — Simpósio de Engenharia · UFPA Tucuruí">
@@ -17,18 +17,18 @@
 <style>
 /* ════════════════════════════════════════
    DESIGN SYSTEM — III SIMPOMEC 2026
-   Crimson: #C41E3A  Dark: #0A0A0F
+   Purple: #8C2BBE  Dark: #08050D
    Font: Bebas Neue (headlines) + Montserrat
 ════════════════════════════════════════ */
 :root {
-  --red:    #C41E3A;
-  --red2:   #8B1028;
-  --bg:     #0A0A0F;
-  --bg2:    #111118;
-  --bg3:    #18181F;
-  --white:  #FFFFFF;
-  --text:   #E0E0EE;
-  --muted:  #707088;
+  --red:    #8C2BBE;
+  --red2:   #4B176E;
+  --bg:     #08050D;
+  --bg2:    #100817;
+  --bg3:    #16091F;
+  --white:  #F6F4FA;
+  --text:   #D8D7DE;
+  --muted:  #787684;
   --gold:   #D4A843;
   --silver: #9BA4B5;
   --bronze: #B87333;
@@ -80,7 +80,7 @@ body {
   transition: all 0.2s;
 }
 .btn-primary { background: var(--red); color: var(--white); }
-.btn-primary:hover { background: #E02040; transform: translateY(-1px); }
+.btn-primary:hover { background: #A040D0; transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--red); border: 2px solid var(--red); }
 .btn-outline:hover { background: var(--red); color: var(--white); }
 
@@ -91,7 +91,7 @@ body {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   background: rgba(10,10,15,0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(139,16,40,0.25);
+  border-bottom: 1px solid rgba(75,23,110,0.25);
   transition: all 0.3s;
 }
 .nav-inner {
@@ -116,7 +116,7 @@ body {
 }
 .nav-links a:hover, .nav-links a.active-link { color: var(--white); background: rgba(255,255,255,0.06); }
 .nav-cta { background: var(--red); color: var(--white) !important; padding: 8px 16px !important; }
-.nav-cta:hover { background: #E02040 !important; }
+.nav-cta:hover { background: #A040D0 !important; }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; transition: 0.3s; }
 
@@ -128,20 +128,20 @@ body {
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden; padding-top: 64px;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(139,16,40,0.3) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(139,16,40,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(75,23,110,0.3) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(75,23,110,0.1) 0%, transparent 60%),
     var(--bg);
 }
 .hero::before {
   content: '⚙';
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  font-size: 700px; color: rgba(139,16,40,0.04); line-height: 1;
+  font-size: 700px; color: rgba(75,23,110,0.04); line-height: 1;
   pointer-events: none; user-select: none;
 }
 .hero-inner { text-align: center; position: relative; z-index: 1; padding: 40px 24px; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(196,30,58,0.15); border: 1px solid rgba(196,30,58,0.4);
+  background: rgba(140,43,190,0.15); border: 1px solid rgba(140,43,190,0.4);
   padding: 8px 20px; border-radius: 100px; margin-bottom: 24px;
   font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--red);
@@ -149,7 +149,7 @@ body {
 .hero-icon {
   width: 160px; height: 160px; margin: 0 auto 28px;
   display: block;
-  filter: drop-shadow(0 0 40px rgba(196,30,58,0.5));
+  filter: drop-shadow(0 0 40px rgba(140,43,190,0.5));
 }
 .hero-title {
   font-family: var(--font-h);
@@ -166,7 +166,7 @@ body {
 .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .countdown { display: flex; gap: 16px; justify-content: center; margin-bottom: 40px; }
 .countdown-box {
-  background: rgba(139,16,40,0.12); border: 1px solid rgba(139,16,40,0.3);
+  background: rgba(75,23,110,0.12); border: 1px solid rgba(75,23,110,0.3);
   padding: 14px 20px; border-radius: var(--r); min-width: 76px; text-align: center;
 }
 .countdown-box .num {
@@ -180,7 +180,7 @@ body {
 .hero-courses { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 40px; }
 .hero-courses span {
   font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-  padding: 6px 14px; border: 1px solid rgba(139,16,40,0.4);
+  padding: 6px 14px; border: 1px solid rgba(75,23,110,0.4);
   border-radius: 100px; color: #888; text-transform: uppercase;
 }
 
@@ -191,7 +191,7 @@ body {
 .sobre-text p { font-size: 15px; color: #9090A0; line-height: 1.8; margin-bottom: 16px; }
 .sobre-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .stat-card {
-  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg3); border: 1px solid rgba(75,23,110,0.2);
   padding: 24px 20px; border-radius: var(--r); text-align: center;
 }
 .stat-card .num { font-family: var(--font-h); font-size: 52px; color: var(--red); line-height: 1; }
@@ -205,7 +205,7 @@ body {
   font-family: var(--font-b); font-size: 13px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.1em;
   padding: 10px 22px; border-radius: var(--r); cursor: pointer;
-  border: 1px solid rgba(139,16,40,0.3); background: transparent;
+  border: 1px solid rgba(75,23,110,0.3); background: transparent;
   color: #666; transition: all 0.2s;
 }
 .prog-tab.active, .prog-tab:hover { background: var(--red); color: var(--white); border-color: var(--red); }
@@ -223,7 +223,7 @@ body {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
   text-transform: uppercase; padding: 3px 10px; border-radius: 100px; margin-left: 8px;
 }
-.prog-type.palestra  { background: rgba(196,30,58,0.2); color: var(--red); }
+.prog-type.palestra  { background: rgba(140,43,190,0.2); color: var(--red); }
 .prog-type.minicurso { background: rgba(212,168,67,0.2); color: var(--gold); }
 .prog-type.abertura  { background: rgba(155,164,181,0.2); color: var(--silver); }
 .prog-type.artigo    { background: rgba(184,115,51,0.2); color: var(--bronze); }
@@ -233,7 +233,7 @@ body {
 ════════════════════════════════════════ */
 .speakers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
 .speaker-card {
-  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg3); border: 1px solid rgba(75,23,110,0.2);
   border-radius: var(--r); padding: 28px 24px; text-align: center;
   transition: border-color 0.2s, transform 0.2s;
 }
@@ -242,7 +242,7 @@ body {
   width: 88px; height: 88px; border-radius: 50%;
   background: var(--bg2); margin: 0 auto 16px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 32px; border: 2px solid rgba(139,16,40,0.4); overflow: hidden;
+  font-size: 32px; border: 2px solid rgba(75,23,110,0.4); overflow: hidden;
 }
 .speaker-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .speaker-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
@@ -261,15 +261,15 @@ body {
 ════════════════════════════════════════ */
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 .course-card {
-  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg3); border: 1px solid rgba(75,23,110,0.2);
   border-radius: var(--r); overflow: hidden;
   display: flex; flex-direction: column;
   transition: border-color 0.2s, transform 0.2s;
 }
 .course-card:hover { border-color: var(--red); transform: translateY(-4px); }
 .course-header {
-  background: linear-gradient(135deg, rgba(139,16,40,0.25), rgba(139,16,40,0.08));
-  padding: 20px 24px; border-bottom: 1px solid rgba(139,16,40,0.15);
+  background: linear-gradient(135deg, rgba(75,23,110,0.25), rgba(75,23,110,0.08));
+  padding: 20px 24px; border-bottom: 1px solid rgba(75,23,110,0.15);
 }
 .course-icon { font-size: 28px; margin-bottom: 8px; }
 .course-title { font-size: 16px; font-weight: 800; color: var(--white); }
@@ -302,13 +302,13 @@ body {
 .artigos-steps li .step-text h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
 .artigos-steps li .step-text p { font-size: 13px; color: #666; line-height: 1.6; }
 .artigos-box {
-  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg3); border: 1px solid rgba(75,23,110,0.2);
   border-radius: var(--r); padding: 32px;
 }
 .artigos-box h3 { font-family: var(--font-h); font-size: 28px; color: var(--white); margin-bottom: 16px; }
 .artigos-box p { font-size: 13px; color: #666; line-height: 1.7; margin-bottom: 24px; }
 .dates {
-  background: var(--bg2); border: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg2); border: 1px solid rgba(75,23,110,0.2);
   border-radius: var(--r); padding: 16px 20px; margin-bottom: 24px;
 }
 .dates h4 {
@@ -324,11 +324,11 @@ body {
 .date-item .dd { color: var(--white); font-weight: 600; }
 .artigos-btns { display: flex; flex-direction: column; gap: 12px; }
 .file-drop {
-  border: 2px dashed rgba(196,30,58,0.35); border-radius: var(--r);
+  border: 2px dashed rgba(140,43,190,0.35); border-radius: var(--r);
   background: var(--bg2); padding: 24px 16px; text-align: center;
   cursor: pointer; transition: all 0.2s;
 }
-.file-drop:hover, .file-drop.drag-over { border-color: var(--red); background: rgba(196,30,58,0.06); }
+.file-drop:hover, .file-drop.drag-over { border-color: var(--red); background: rgba(140,43,190,0.06); }
 .file-drop.has-file { border-color: #4CAF50; background: rgba(76,175,80,0.06); }
 .file-drop-icon { font-size: 28px; margin-bottom: 6px; }
 .file-drop-text { font-size: 12px; color: #555; line-height: 1.6; }
@@ -357,18 +357,18 @@ body {
 .sponsor-logo:hover img { filter: brightness(1); }
 .sponsor-logo-name { font-size: 15px; font-weight: 700; color: #888; }
 .sponsor-slot {
-  background: var(--bg3); border: 1px dashed rgba(196,30,58,0.35);
+  background: var(--bg3); border: 1px dashed rgba(140,43,190,0.35);
   border-radius: var(--r); padding: 20px 28px;
   display: flex; align-items: center; justify-content: center;
   min-width: 140px; min-height: 72px;
-  font-size: 12px; color: rgba(196,30,58,0.6); font-weight: 600;
+  font-size: 12px; color: rgba(140,43,190,0.6); font-weight: 600;
   text-align: center; transition: all 0.2s; cursor: pointer; text-decoration: none;
 }
-.sponsor-slot:hover { border-color: var(--red); color: var(--red); background: rgba(196,30,58,0.06); }
+.sponsor-slot:hover { border-color: var(--red); color: var(--red); background: rgba(140,43,190,0.06); }
 .sponsors-cta {
   margin-top: 48px; text-align: center;
-  background: linear-gradient(135deg, rgba(139,16,40,0.15), rgba(139,16,40,0.05));
-  border: 1px solid rgba(139,16,40,0.3); border-radius: var(--r); padding: 36px;
+  background: linear-gradient(135deg, rgba(75,23,110,0.15), rgba(75,23,110,0.05));
+  border: 1px solid rgba(75,23,110,0.3); border-radius: var(--r); padding: 36px;
 }
 .sponsors-cta h3 { font-family: var(--font-h); font-size: 32px; color: var(--white); margin-bottom: 8px; }
 .sponsors-cta p { font-size: 14px; color: #666; margin-bottom: 24px; }
@@ -379,7 +379,7 @@ body {
 ════════════════════════════════════════ */
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
 .contact-card {
-  background: var(--bg3); border: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg3); border: 1px solid rgba(75,23,110,0.2);
   border-radius: var(--r); padding: 24px;
   display: flex; align-items: flex-start; gap: 16px;
   text-decoration: none; transition: border-color 0.2s, transform 0.2s;
@@ -396,7 +396,7 @@ body {
    FOOTER
 ════════════════════════════════════════ */
 footer {
-  background: var(--bg2); border-top: 1px solid rgba(139,16,40,0.2);
+  background: var(--bg2); border-top: 1px solid rgba(75,23,110,0.2);
   padding: 48px 0 32px;
 }
 .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px; }
@@ -431,7 +431,7 @@ footer {
 .inscricao-check li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #888; }
 .inscricao-check li::before { content: '✓'; color: var(--red); font-weight: 900; flex-shrink: 0; margin-top: 1px; }
 .form-box {
-  background: var(--bg3); border: 1px solid rgba(139,16,40,0.25);
+  background: var(--bg3); border: 1px solid rgba(75,23,110,0.25);
   border-radius: var(--r); padding: 36px;
 }
 .form-box h3 { font-family: var(--font-h); font-size: 26px; color: var(--white); margin-bottom: 4px; }
@@ -443,7 +443,7 @@ footer {
 }
 .form-group label .req { color: var(--red); margin-left: 2px; }
 .form-control {
-  width: 100%; background: var(--bg2); border: 1px solid rgba(139,16,40,0.2);
+  width: 100%; background: var(--bg2); border: 1px solid rgba(75,23,110,0.2);
   border-radius: var(--r); padding: 11px 14px;
   font-family: var(--font-b); font-size: 13px; color: var(--white);
   transition: border-color 0.2s; outline: none;
@@ -462,21 +462,21 @@ footer {
 .radio-group { display: flex; flex-direction: column; gap: 10px; }
 .radio-item {
   display: flex; align-items: center; gap: 10px;
-  background: var(--bg2); border: 1px solid rgba(139,16,40,0.15);
+  background: var(--bg2); border: 1px solid rgba(75,23,110,0.15);
   border-radius: var(--r); padding: 10px 14px; cursor: pointer;
   transition: border-color 0.2s;
 }
-.radio-item:has(input:checked) { border-color: var(--red); background: rgba(196,30,58,0.08); }
+.radio-item:has(input:checked) { border-color: var(--red); background: rgba(140,43,190,0.08); }
 .radio-item input[type="radio"] { accent-color: var(--red); width: 15px; height: 15px; flex-shrink: 0; }
 .radio-item .radio-label { font-size: 13px; color: var(--text); }
 .radio-item .radio-sub { font-size: 11px; color: #444; display: block; margin-top: 1px; }
 .checkbox-item {
   display: flex; align-items: center; gap: 10px;
-  background: var(--bg2); border: 1px solid rgba(139,16,40,0.15);
+  background: var(--bg2); border: 1px solid rgba(75,23,110,0.15);
   border-radius: var(--r); padding: 12px 14px; cursor: pointer;
   transition: border-color 0.2s;
 }
-.checkbox-item:has(input:checked) { border-color: var(--red); background: rgba(196,30,58,0.08); }
+.checkbox-item:has(input:checked) { border-color: var(--red); background: rgba(140,43,190,0.08); }
 .checkbox-item input[type="checkbox"] { accent-color: var(--red); width: 15px; height: 15px; flex-shrink: 0; }
 .form-submit {
   width: 100%; margin-top: 24px; padding: 15px;
@@ -485,7 +485,7 @@ footer {
   background: var(--red); color: var(--white); border: none;
   border-radius: var(--r); cursor: pointer; transition: all 0.2s;
 }
-.form-submit:hover { background: #E02040; transform: translateY(-1px); }
+.form-submit:hover { background: #A040D0; transform: translateY(-1px); }
 .form-submit:disabled { background: #333; color: #555; cursor: not-allowed; transform: none; }
 .form-note { font-size: 11px; color: #333; text-align: center; margin-top: 14px; line-height: 1.6; }
 .form-success {
@@ -505,7 +505,7 @@ footer {
     display: flex; flex-direction: column;
     position: absolute; top: 64px; left: 0; right: 0;
     background: rgba(10,10,15,0.98);
-    padding: 16px; border-bottom: 1px solid rgba(139,16,40,0.2);
+    padding: 16px; border-bottom: 1px solid rgba(75,23,110,0.2);
     gap: 4px;
   }
   .nav-links.open a { padding: 10px 12px; }
@@ -526,6 +526,7 @@ footer {
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#hero">
+      <img src="assets/logos/logo-caem-branco.png" alt="CAEM" style="height:34px;width:auto;">
       <span class="badge">III</span>SIMPOMEC
     </a>
     <ul class="nav-links" id="nav-links">
@@ -548,48 +549,9 @@ footer {
   <div class="hero-inner">
     <div class="hero-badge">⚙ Outubro 2026 · UFPA Tucuruí · CAMTUC</div>
 
-    <!-- Gear + Wrench SVG Icon -->
-    <svg class="hero-icon" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="hgbg" cx="50%" cy="45%" r="55%">
-          <stop offset="0%" stop-color="#1E0008"/>
-          <stop offset="100%" stop-color="#0A0A0F"/>
-        </radialGradient>
-        <linearGradient id="hggf" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#E02040"/>
-          <stop offset="100%" stop-color="#7A0015"/>
-        </linearGradient>
-        <filter id="hglow">
-          <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#C41E3A" flood-opacity="0.7"/>
-        </filter>
-      </defs>
-      <circle cx="160" cy="160" r="160" fill="url(#hgbg)"/>
-      <g transform="translate(160,160)" filter="url(#hglow)">
-        <g fill="url(#hggf)">
-          <rect x="-7" y="-88" width="14" height="20" rx="3"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(30)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(60)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(90)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(120)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(150)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(180)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(210)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(240)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(270)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(300)"/>
-          <rect x="-7" y="-88" width="14" height="20" rx="3" transform="rotate(330)"/>
-        </g>
-        <circle cx="0" cy="0" r="74" fill="url(#hggf)" opacity="0.08"/>
-        <circle cx="0" cy="0" r="74" fill="none" stroke="url(#hggf)" stroke-width="17"/>
-        <circle cx="0" cy="0" r="57" fill="#0C0C18"/>
-        <g transform="translate(0,4)" opacity="0.93">
-          <path d="M -13,-50 A 26,26 0 1 0 13,-50"
-                fill="none" stroke="white" stroke-width="15" stroke-linecap="round"/>
-          <rect x="-7" y="-11" width="14" height="56" rx="7" fill="white"/>
-          <circle cx="0" cy="-11" r="8" fill="white"/>
-        </g>
-      </g>
-    </svg>
+    <!-- Logo CAEM -->
+    <img class="hero-icon" src="assets/logos/logo-caem-roxo.png" alt="Logo CAEM"
+         style="filter: drop-shadow(0 0 40px rgba(140,43,190,0.6));" loading="eager">
 
     <div class="hero-title"><span class="iii">III</span> SIMPOMEC</div>
     <div class="hero-subtitle">Simpósio de Engenharia · UFPA Tucuruí · 2026</div>
@@ -800,7 +762,7 @@ footer {
         <div class="speaker-company">UFPA</div>
         <span class="speaker-status tba">Em breve</span>
       </div>
-      <div class="speaker-card" style="border-style:dashed; border-color:rgba(139,16,40,0.3)">
+      <div class="speaker-card" style="border-style:dashed; border-color:rgba(75,23,110,0.3)">
         <div class="speaker-avatar" style="border-style:dashed">➕</div>
         <div class="speaker-name" style="color:#333">Sua empresa aqui</div>
         <div class="speaker-role" style="color:#333">Seja patrocinador Ouro</div>
@@ -890,8 +852,8 @@ footer {
         </div>
       </div>
 
-      <div class="course-card" style="border-style:dashed; border-color:rgba(139,16,40,0.3);">
-        <div class="course-header" style="background:rgba(139,16,40,0.06);">
+      <div class="course-card" style="border-style:dashed; border-color:rgba(75,23,110,0.3);">
+        <div class="course-header" style="background:rgba(75,23,110,0.06);">
           <div class="course-icon">➕</div>
           <div class="course-title" style="color:#333">Mais minicursos em breve</div>
         </div>

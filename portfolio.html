@@ -9,8 +9,8 @@
 <style>
 /* ═══════════════════════════════════════════
    DESIGN SYSTEM — CAEM 2026
-   Background: #0A0A0F  Primary: #8B1028
-   Crimson bright: #C41E3A  Gold: #D4A843
+   Background: #08050D  Primary: #4B176E
+   Purple bright: #8C2BBE  Gold: #D4A843
    Silver: #9BA4B5  Bronze: #B87333
    Headline: Bebas Neue  Body: Montserrat
 ═══════════════════════════════════════════ */
@@ -18,18 +18,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:       #0A0A0F;
-  --bg2:      #111118;
-  --bg3:      #16161F;
-  --crimson:  #8B1028;
-  --red:      #C41E3A;
+  --bg:       #08050D;
+  --bg2:      #100817;
+  --bg3:      #16091F;
+  --crimson:  #4B176E;
+  --red:      #8C2BBE;
   --gold:     #D4A843;
   --silver:   #9BA4B5;
   --bronze:   #B87333;
-  --white:    #FFFFFF;
-  --text:     #E8E8F0;
-  --muted:    #7A7A8C;
-  --line:     rgba(139,16,40,0.3);
+  --white:    #F6F4FA;
+  --text:     #D8D7DE;
+  --muted:    #787684;
+  --line:     rgba(140,43,190,0.25);
 }
 
 html { font-size: 16px; }
@@ -160,8 +160,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(139,16,40,0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(139,16,40,0.12) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(75,23,110,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(75,23,110,0.12) 0%, transparent 60%);
 }
 
 .cover-logo {
@@ -169,7 +169,7 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
   margin-bottom: 28px;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 0 40px rgba(196,30,58,0.4));
+  filter: drop-shadow(0 0 40px rgba(140,43,190,0.4));
 }
 
 .cover-title {
@@ -213,8 +213,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
 
 .cover-event-box {
   position: relative; z-index: 1;
-  border: 1px solid rgba(139,16,40,0.5);
-  background: rgba(139,16,40,0.1);
+  border: 1px solid rgba(75,23,110,0.5);
+  background: rgba(75,23,110,0.1);
   backdrop-filter: blur(8px);
   padding: 20px 40px;
   border-radius: 2px;
@@ -336,8 +336,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
 }
 
 .mission-box {
-  background: linear-gradient(135deg, rgba(139,16,40,0.15), rgba(139,16,40,0.05));
-  border: 1px solid rgba(139,16,40,0.4);
+  background: linear-gradient(135deg, rgba(75,23,110,0.15), rgba(75,23,110,0.05));
+  border: 1px solid rgba(75,23,110,0.4);
   padding: 20px 24px;
   border-radius: 2px;
   margin-top: 16px;
@@ -368,7 +368,7 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
   right: -20px; top: -10px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 100px;
-  color: rgba(139,16,40,0.08);
+  color: rgba(75,23,110,0.08);
   pointer-events: none;
 }
 .event-badges {
@@ -470,8 +470,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(139,16,40,0.15);
-  border: 1px solid rgba(139,16,40,0.3);
+  background: rgba(75,23,110,0.15);
+  border: 1px solid rgba(75,23,110,0.3);
   border-radius: 2px;
 }
 .why-card h4 { font-size: 12px; color: var(--white); margin-bottom: 4px; }
@@ -618,8 +618,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
    PAGE 8 — CONTATO
 ────────────────────────────────────── */
 .contact-hero {
-  background: linear-gradient(135deg, rgba(139,16,40,0.2), rgba(139,16,40,0.05));
-  border: 1px solid rgba(139,16,40,0.3);
+  background: linear-gradient(135deg, rgba(75,23,110,0.2), rgba(75,23,110,0.05));
+  border: 1px solid rgba(75,23,110,0.3);
   padding: 32px;
   text-align: center;
   margin-bottom: 20px;
@@ -629,7 +629,7 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
 .contact-hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(196,30,58,0.15), transparent);
+  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(140,43,190,0.15), transparent);
 }
 .contact-hero h2 { position: relative; z-index:1; font-size: 40px; color: var(--white); }
 .contact-hero p { position: relative; z-index:1; font-size: 13px; color: var(--muted); margin-top: 8px; }
@@ -801,11 +801,11 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
       <h3 style="color:var(--white); margin-bottom:10px;">Uma Semana Completa de Engenharia em Tucuruí</h3>
       <p style="font-size:12px; max-width:520px;">O SIMPOMEC é uma semana inteira de imersão técnica e acadêmica reunindo estudantes de 5 cursos de engenharia da UFPA Tucuruí junto com profissionais e empresas do mercado. Um evento que conecta a academia à indústria em uma das regiões com maior potencial energético e industrial do Brasil, abrindo portas para estágios, vagas e parcerias estratégicas.</p>
       <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;">
-        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">⚙ Eng. Mecânica</span>
-        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">⚡ Eng. Elétrica</span>
-        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">🏗 Eng. Civil</span>
-        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">🌿 Eng. Sanitária e Ambiental</span>
-        <span style="font-size:10px; background:rgba(139,16,40,0.2); border:1px solid rgba(139,16,40,0.4); padding:4px 10px; color:var(--text);">💻 Computação e Física</span>
+        <span style="font-size:10px; background:rgba(75,23,110,0.2); border:1px solid rgba(75,23,110,0.4); padding:4px 10px; color:var(--text);">⚙ Eng. Mecânica</span>
+        <span style="font-size:10px; background:rgba(75,23,110,0.2); border:1px solid rgba(75,23,110,0.4); padding:4px 10px; color:var(--text);">⚡ Eng. Elétrica</span>
+        <span style="font-size:10px; background:rgba(75,23,110,0.2); border:1px solid rgba(75,23,110,0.4); padding:4px 10px; color:var(--text);">🏗 Eng. Civil</span>
+        <span style="font-size:10px; background:rgba(75,23,110,0.2); border:1px solid rgba(75,23,110,0.4); padding:4px 10px; color:var(--text);">🌿 Eng. Sanitária e Ambiental</span>
+        <span style="font-size:10px; background:rgba(75,23,110,0.2); border:1px solid rgba(75,23,110,0.4); padding:4px 10px; color:var(--text);">💻 Computação e Física</span>
       </div>
     </div>
 
