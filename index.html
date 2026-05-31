@@ -589,20 +589,25 @@ textarea.form-control { resize:vertical; min-height:96px; }
 /* ══════════════════════════════════
    CONTATO
 ══════════════════════════════════ */
-.contact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:var(--s3); }
+.contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s3); }
 .contact-card {
   background:var(--nucleo); border:1px solid var(--b1);
-  border-radius:var(--r); padding:var(--s5);
-  display:flex; align-items:flex-start; gap:var(--s4);
-  text-decoration:none; transition:border-color 0.15s, transform 0.15s;
+  border-radius:var(--r); padding:var(--s5) var(--s5);
+  display:flex; align-items:center; gap:var(--s4);
+  text-decoration:none; transition:border-color 0.15s;
 }
-.contact-card:hover { border-color:var(--b2); transform:translateY(-2px); }
-.contact-icon { font-size:22px; flex-shrink:0; }
+.contact-card:hover { border-color:var(--b2); }
+.contact-icon {
+  font-size:18px; flex-shrink:0; width:36px; height:36px;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(140,43,190,0.1); border:1px solid var(--b2);
+  border-radius:var(--r); color:var(--touro); font-style:normal;
+}
 .contact-info label {
   font-size:9px; font-weight:700; letter-spacing:0.2em;
   text-transform:uppercase; color:var(--grafite); display:block; margin-bottom:3px;
 }
-.contact-info span { font-size:14px; font-weight:600; color:var(--aco); }
+.contact-info span { font-size:13px; font-weight:600; color:var(--aco); }
 
 /* ══════════════════════════════════
    FOOTER
@@ -643,6 +648,9 @@ footer {
 @media (max-width:900px) {
   .sobre-grid, .artigos-grid, .inscricao-grid { grid-template-columns:1fr; }
   .form-row { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+  .contact-grid { grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:640px) {
   .nav-links { display:none; }
@@ -1288,20 +1296,28 @@ footer {
     <div class="title-line"></div>
     <div class="contact-grid">
       <a class="contact-card" href="mailto:caemtucurui@gmail.com">
-        <div class="contact-icon">📧</div>
+        <div class="contact-icon">✉</div>
         <div class="contact-info"><label>E-mail</label><span>caemtucurui@gmail.com</span></div>
       </a>
       <a class="contact-card" href="https://wa.me/5594925970449" target="_blank" rel="noopener">
-        <div class="contact-icon">📱</div>
+        <div class="contact-icon">💬</div>
         <div class="contact-info"><label>WhatsApp</label><span>+55 94 9259-7049</span></div>
       </a>
       <a class="contact-card" href="https://instagram.com/caemtuc" target="_blank" rel="noopener">
-        <div class="contact-icon">📷</div>
+        <div class="contact-icon">◈</div>
         <div class="contact-info"><label>Instagram</label><span>@caemtuc</span></div>
       </a>
       <a class="contact-card" href="https://www.google.com/maps/search/CAMTUC+UFPA+Tucuruí+Pará" target="_blank" rel="noopener">
-        <div class="contact-icon">📍</div>
-        <div class="contact-info"><label>Local</label><span>UFPA · Campus Tucuruí (CAMTUC)</span></div>
+        <div class="contact-icon">⌖</div>
+        <div class="contact-info"><label>Local</label><span>UFPA · Campus Tucuruí · CAMTUC</span></div>
+      </a>
+      <a class="contact-card" href="https://caemtucurui-web.github.io/CAEM/" target="_blank" rel="noopener">
+        <div class="contact-icon">⬡</div>
+        <div class="contact-info"><label>Site do CAEM</label><span>caemtucurui-web.github.io/CAEM</span></div>
+      </a>
+      <a class="contact-card" href="https://fem.camtuc.ufpa.br" target="_blank" rel="noopener">
+        <div class="contact-icon">◎</div>
+        <div class="contact-info"><label>FEM · UFPA Tucuruí</label><span>fem.camtuc.ufpa.br</span></div>
       </a>
     </div>
   </div>
