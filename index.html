@@ -550,7 +550,7 @@ textarea.form-control { resize:vertical; min-height:96px; }
   min-width:140px; min-height:72px; transition:border-color 0.15s;
 }
 .sponsor-logo:hover { border-color:var(--b2); }
-.sponsor-logo img { max-height:44px; max-width:140px; object-fit:contain; filter:brightness(0.9); }
+.sponsor-logo img { max-height:44px; max-width:140px; object-fit:contain; }
 .sponsor-logo-name { font-size:14px; font-weight:700; color:var(--grafite); }
 .sponsor-slot {
   background:var(--nucleo); border:1px dashed var(--b2);
@@ -630,10 +630,9 @@ footer {
 .footer-desc { font-size:11px; color:var(--sombra); margin-top:4px; letter-spacing:0.06em; }
 .footer-institutions { display:flex; align-items:center; gap:var(--s4); margin-top:var(--s4); }
 .footer-institution-logo {
-  height:28px; opacity:0.3; transition:opacity 0.15s;
-  filter:brightness(0) invert(1);
+  height:28px; opacity:0.8; transition:opacity 0.15s;
 }
-.footer-institution-logo:hover { opacity:0.65; }
+.footer-institution-logo:hover { opacity:1; }
 .footer-links { display:flex; flex-direction:column; gap:var(--s3); }
 .footer-links a { font-size:13px; color:var(--sombra); text-decoration:none; transition:color 0.15s; }
 .footer-links a:hover { color:var(--prata); }
