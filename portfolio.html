@@ -18,18 +18,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:       #08050D;
-  --bg2:      #100817;
-  --bg3:      #16091F;
+  --bg:       #FFFFFF;
+  --bg2:      #F4F3F7;
+  --bg3:      #ECEAF0;
   --crimson:  #4B176E;
   --red:      #8C2BBE;
-  --gold:     #D4A843;
-  --silver:   #9BA4B5;
-  --bronze:   #B87333;
-  --white:    #F6F4FA;
-  --text:     #D8D7DE;
-  --muted:    #787684;
-  --line:     rgba(140,43,190,0.25);
+  --gold:     #B8880A;
+  --silver:   #6B7485;
+  --bronze:   #8C5520;
+  --white:    #0D0A14;
+  --text:     #2C2A38;
+  --muted:    #555265;
+  --line:     rgba(140,43,190,0.20);
 }
 
 html { font-size: 16px; }
@@ -160,8 +160,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(75,23,110,0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(75,23,110,0.12) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(140,43,190,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(140,43,190,0.06) 0%, transparent 60%);
 }
 
 .cover-logo {
@@ -213,8 +213,8 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
 
 .cover-event-box {
   position: relative; z-index: 1;
-  border: 1px solid rgba(75,23,110,0.5);
-  background: rgba(75,23,110,0.1);
+  border: 1px solid rgba(140,43,190,0.35);
+  background: rgba(140,43,190,0.07);
   backdrop-filter: blur(8px);
   padding: 20px 40px;
   border-radius: 2px;
@@ -336,7 +336,7 @@ p { font-size: 13px; line-height: 1.75; color: var(--text); }
 }
 
 .mission-box {
-  background: linear-gradient(135deg, rgba(75,23,110,0.15), rgba(75,23,110,0.05));
+  background: linear-gradient(135deg, rgba(140,43,190,0.08), rgba(140,43,190,0.03));
   border: 1px solid rgba(75,23,110,0.4);
   padding: 20px 24px;
   border-radius: 2px;
